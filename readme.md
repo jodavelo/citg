@@ -10,10 +10,11 @@ CITG requires [Python](https://www.python.org/) v3.9+ to run.
 
 Once made the previous steps you can run:
 
-```
+```python
 python3 script.py
 ```
 
+#### Don't forget put your own api key generated from virus total page and replace it in apykey keyword inside of script.py
 
 ## Copyright
 
