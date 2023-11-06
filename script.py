@@ -138,7 +138,7 @@ ips_db = database_ips()
 high_risk_ips = []
 
 def check_fraud_score(ip_address):
-    url = f"https://ipqualityscore.com/api/json/ip/apikey/{ip_address}?strictness=1"
+    url = f"https://ipqualityscore.com/api/json/ip/r8gzGddTBOHUKimOW4yFGpJINdVhssR9/{ip_address}?strictness=1"
     response = requests.get(url)
     
     if response.status_code == 200:
@@ -171,6 +171,24 @@ def copy_to_remote(server, port, user, password, local_path, remote_path):
         scp.put(local_path, remote_path)
     ssh.close()
 
+def restart_pfsense_service():
+    pfSense_ip = "192.168.1.1"
+    pfSense_user = "admin"
+    pfSense_password = "123456789"
+
+
+    ssh = paramiko.SSHClient()
+    ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+
+    try:
+        ssh.connect(pfSense_ip, username=pfSense_user, password=pfSense_password)
+        stdin, stdout, stderr = ssh.exec_command('/etc/rc.reload_all')
+        # print(stdout.read().decode())
+    except Exception as e:
+        print(f"Conexión fallida: {e}")
+    finally:
+        ssh.close()
+
 def file_manager(ips):
     # Configuration for to connect
     server = '192.168.1.1'
@@ -188,6 +206,8 @@ def file_manager(ips):
 
     # Copy to remote server
     copy_to_remote(server, port, user, password, local_path, remote_path)
+    restart_pfsense_service()
+
 
 # --------------------------------------------------------
 # Suricata Syslog and DB
