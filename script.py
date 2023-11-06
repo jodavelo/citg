@@ -67,12 +67,14 @@ def change_xml_file(path, array_ips):
     for ip in array_ips:  
         if not rule_exists(existing_rules, ip):
             new_rule = ET.fromstring(create_rule_xml_string(ip, 'citg'))
+            print('Rule created ', ip)
             filter_tag.append(new_rule)
 
     new_xml_string = ET.tostring(root, encoding='unicode')
 
     with open(path, 'w') as file:
         file.write(new_xml_string)
+        print('Rules created successfully')
 
 # ------------------------------------------------------------
 
@@ -145,6 +147,7 @@ def check_fraud_score(ip_address):
         data = response.json()
         if data['success'] and data['fraud_score'] >= 75:
             high_risk_ips.append(ip_address)
+    print('All IPs checked!')
 
 for ip in filtered_ips:
     check_fraud_score(ip)
@@ -164,12 +167,14 @@ def copy_from_remote(server, port, user, password, remote_path, local_path):
     with SCPClient(ssh.get_transport()) as scp:
         scp.get(remote_path, local_path)
     ssh.close()
+    print('Copied file from PfSense!')
 
 def copy_to_remote(server, port, user, password, local_path, remote_path):
     ssh = create_ssh_client(server, port, user, password)
     with SCPClient(ssh.get_transport()) as scp:
         scp.put(local_path, remote_path)
     ssh.close()
+    print('Copied file to PfSense!')
 
 def restart_pfsense_service():
     pfSense_ip = "192.168.1.1"
@@ -183,10 +188,12 @@ def restart_pfsense_service():
     try:
         ssh.connect(pfSense_ip, username=pfSense_user, password=pfSense_password)
         stdin, stdout, stderr = ssh.exec_command('/etc/rc.reload_all')
+        print('PfSense service restarted')
         # print(stdout.read().decode())
     except Exception as e:
         print(f"Conexión fallida: {e}")
     finally:
+        print('Service restart finished!')
         ssh.close()
 
 def file_manager(ips):
@@ -207,6 +214,7 @@ def file_manager(ips):
     # Copy to remote server
     copy_to_remote(server, port, user, password, local_path, remote_path)
     restart_pfsense_service()
+    print('file manager finished!')
 
 
 # --------------------------------------------------------
