@@ -138,7 +138,7 @@ ips_db = database_ips()
 high_risk_ips = []
 
 def check_fraud_score(ip_address):
-    url = f"https://ipqualityscore.com/api/json/ip/r8gzGddTBOHUKimOW4yFGpJINdVhssR9/{ip_address}?strictness=1"
+    url = f"https://ipqualityscore.com/api/json/ip/apikey/{ip_address}?strictness=1"
     response = requests.get(url)
     
     if response.status_code == 200:
@@ -241,7 +241,7 @@ if( sysLogDb or sysLogIPRep ):
 
 # print(malicious_ips_db)
 # print(high_risk_ips)
-# print(combined_ips_set)
+# print(combined_ips_sett)
 
 
 
