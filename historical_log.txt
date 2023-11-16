@@ -1,0 +1,7 @@
+2023-11-15 21:47:23,474 INFO:Script historical.py started
+2023-11-15 21:48:05,846 INFO:Script historical.py stopped
+2023-11-15 23:50:37,668 INFO:File modified. Running historical.py
+2023-11-15 23:50:46,762 INFO:File modified. Running historical.py
+2023-11-15 23:50:47,705 INFO:File modified. Running historical.py
+2023-11-15 23:53:01,047 INFO:File modified. Running historical.py
+2023-11-15 23:53:02,853 INFO:File modified. Running historical.py

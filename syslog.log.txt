@@ -1,0 +1,12 @@
+Nov  7 15:24:51 hyde-virtual-machine kernel: [78636.777783] e1000: ens33 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: None
+Nov  7 15:24:51 hyde-virtual-machine kernel: [78636.779845] IPv6: ADDRCONF(NETDEV_CHANGE): ens33: link becomes ready
+Nov  7 15:25:09 hyde-virtual-machine kernel: [78654.612987] audit: type=1326 audit(1699388709.165:685): auid=1000 uid=1000 gid=1000 ses=5 subj=snap.snap-store.ubuntu-software pid=3485 comm="pool-org.gnome." exe="/snap/snap-store/959/usr/bin/snap-store" sig=0 arch=c000003e syscall=93 compat=0 ip=0x7fd2a7007c4b code=0x50000
+Nov  6 18:50:53 pfSense - 11/06/2023-18:50:51.833465  [**] [1:2522000:5333] ET TOR Known Tor Relay/Router (Not Exit) Node Traffic group 1 [**] [Classification: Misc Attack] [Priority: 2] {TCP} 102.130.113.9:443 -> 192.168.1.103:47286
+Nov  6 18:51:53 pfSense - 11/06/2023-18:51:52.865774  [**] [1:2522000:5333] ET TOR Known Tor Relay/Router (Not Exit) Node Traffic group 1 [**] [Classification: Misc Attack] [Priority: 2] {TCP} 102.130.113.9:443 -> 192.168.1.103:56620
+Nov  7 15:40:25 pfSense - 11/07/2023-15:40:24.225519  [**] [1:2520000:5333] ET TOR Known Tor Exit Node Traffic group 1 [**] [Classification: Misc Attack] [Priority: 2] {TCP} 103.129.222.46:443 -> 192.168.1.103:53000
+Nov  7 15:40:25 pfSense - 11/07/2023-15:40:24.225519  [**] [1:2522000:5333] ET TOR Known Tor Relay/Router (Not Exit) Node Traffic group 1 [**] [Classification: Misc Attack] [Priority: 2] {TCP} 103.129.222.46:443 -> 192.168.1.103:53000
+Nov  7 22:36:31 hyde-virtual-machine kernel: [81675.842286] e1000: ens33 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: None
+Nov  7 22:36:31 hyde-virtual-machine kernel: [81675.844253] IPv6: ADDRCONF(NETDEV_CHANGE): ens33: link becomes ready
+Nov  7 16:19:06 pfSense - 11/07/2023-16:19:04.951026  [**] [1:900505872:1] Feodo Tracker: potential Dridex CnC Traffic detected [**] [Classification: A Network Trojan was detected] [Priority: 1] {TCP} 192.168.1.103:46368 -> 178.128.23.9:4125
+Nov  7 16:23:10 pfSense - 11/07/2023-16:23:09.132228  [**] [1:900505872:1] Feodo Tracker: potential Dridex CnC Traffic detected [**] [Classification: A Network Trojan was detected] [Priority: 1] {TCP} 192.168.1.103:43770 -> 178.128.23.9:4125
+tes

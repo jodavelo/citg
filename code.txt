@@ -1,0 +1,14 @@
+@app.post("/select_filter/")
+async def select_filter(filter_selection: FilterSelection):
+    # Aquí procesarías la selección del filtro
+    # Por ejemplo, podrías llamar a una función que maneje el filtro seleccionado
+    try:
+        # Suponiendo que tengas una función `handle_filter_selection`
+        # handle_filter_selection(filter_selection.use_history_ips, filter_selection.use_ip_reputation)
+        return {
+            "use_history_ips": filter_selection.use_history_ips,
+            "use_ip_reputation": filter_selection.use_ip_reputation,
+            "message": "Filtro seleccionado procesado correctamente."
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))

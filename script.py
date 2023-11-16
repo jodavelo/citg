@@ -15,8 +15,12 @@ sysLogDb = False
 sysLogIPRep = False
 sysLogDbRep = False
 
+historyPercentageIndicator = 0.4
+IDSPercentageIndicator = 0.35
+ipReputationPercentageIndicator = 0.25
+
 # ------------------------------------------------------------
-# Changing xml file
+# Changing xml file - General
 # ------------------------------------------------------------
 def create_rule_xml_string(ip, description):
     timestamp = int(time.time())
@@ -45,6 +49,9 @@ def create_rule_xml_string(ip, description):
     </rule>
     '''
 
+# ------------------------------------------------------------
+# xml file - General
+# ------------------------------------------------------------
 def rule_exists(rules, ip_address):
     for rule in rules:
         source = rule.find('.//source')
@@ -54,6 +61,10 @@ def rule_exists(rules, ip_address):
                 return True
     return False
 
+
+# ------------------------------------------------------------
+# xml file - General
+# ------------------------------------------------------------
 def change_xml_file(path, array_ips):
     with open(path, 'r') as file:
         xml_string = file.read()
@@ -80,7 +91,7 @@ def change_xml_file(path, array_ips):
 
 
 # ------------------------------------------------------------
-# Proccessing IPs addresses of syslog
+# Proccessing IPs addresses of syslog - General
 # ------------------------------------------------------------
 def is_ip_in_range(ip, start, end):
     return ip_address(start) <= ip_address(ip) <= ip_address(end)
@@ -108,6 +119,9 @@ filtered_ips = pfsense_ips()
 
 # print(filtered_ips)
 
+# ------------------------------------------------------------
+# Historycal ip addresses
+# ------------------------------------------------------------
 def database_ips():
     # DB config
     config = {
@@ -139,6 +153,9 @@ ips_db = database_ips()
 # List to storage IPs with fraud_score >= 75
 high_risk_ips = []
 
+# -------------------------------------------------------
+# IP Reputation
+# -------------------------------------------------------
 def check_fraud_score(ip_address):
     url = f"https://ipqualityscore.com/api/json/ip/apikey/{ip_address}?strictness=1"
     response = requests.get(url)
@@ -147,14 +164,14 @@ def check_fraud_score(ip_address):
         data = response.json()
         if data['success'] and data['fraud_score'] >= 75:
             high_risk_ips.append(ip_address)
-    print('All IPs checked!')
+            print('IP checked!', ip_address)
 
 for ip in filtered_ips:
     check_fraud_score(ip)
 
 
 # --------------------------------------------------------
-# Ssh Connection to PfSense
+# Ssh Connection to PfSense - General
 # --------------------------------------------------------
 def create_ssh_client(server, port, user, password):
     client = paramiko.SSHClient()
@@ -205,15 +222,17 @@ def file_manager(ips):
     remote_path = '/cf/conf/config.xml'
     local_path = './config.xml'
 
+    print( ips )
+
     # Copy from remote server
-    copy_from_remote(server, port, user, password, remote_path, local_path)
+    #copy_from_remote(server, port, user, password, remote_path, local_path)
 
     # Modify file
-    change_xml_file('./config.xml', ips)
+    #change_xml_file('./config.xml', ips)
 
     # Copy to remote server
-    copy_to_remote(server, port, user, password, local_path, remote_path)
-    restart_pfsense_service()
+    #copy_to_remote(server, port, user, password, local_path, remote_path)
+    #restart_pfsense_service()
     print('file manager finished!')
 
 

@@ -14,7 +14,7 @@ cnx = mysql.connector.connect(**config)
 cursor = cnx.cursor()
 
 # Consultar la tabla ip_addresses
-query = "SELECT * FROM ip_addresses"
+query = "SELECT * FROM commitment_indicators"
 cursor.execute(query)
 
 # Imprimir los resultados
