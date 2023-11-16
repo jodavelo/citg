@@ -80,14 +80,14 @@ def change_xml_file(path, array_ips):
     for ip in array_ips:  
         if not rule_exists(existing_rules, ip):
             new_rule = ET.fromstring(create_rule_xml_string(ip, 'citg'))
-            print('Rule created ', ip)
+            logging.info('Rule created ', ip)
             filter_tag.append(new_rule)
 
     new_xml_string = ET.tostring(root, encoding='unicode')
 
     with open(path, 'w') as file:
         file.write(new_xml_string)
-        print('Rules created successfully')
+        logging.info('Rules created successfully')
 
 # ------------------------------------------------------------
 # Proccessing IPs addresses of syslog - General
@@ -158,14 +158,14 @@ def copy_from_remote(server, port, user, password, remote_path, local_path):
     with SCPClient(ssh.get_transport()) as scp:
         scp.get(remote_path, local_path)
     ssh.close()
-    print('Copied file from PfSense!')
+    logging.info('Copied file from PfSense!')
 
 def copy_to_remote(server, port, user, password, local_path, remote_path):
     ssh = create_ssh_client(server, port, user, password)
     with SCPClient(ssh.get_transport()) as scp:
         scp.put(local_path, remote_path)
     ssh.close()
-    print('Copied file to PfSense!')
+    logging.info('Copied file to PfSense!')
 
 def restart_pfsense_service():
     pfSense_ip = "192.168.1.1"
@@ -179,12 +179,12 @@ def restart_pfsense_service():
     try:
         ssh.connect(pfSense_ip, username=pfSense_user, password=pfSense_password)
         stdin, stdout, stderr = ssh.exec_command('/etc/rc.reload_all')
-        print('PfSense service restarted')
-        # print(stdout.read().decode())
+        logging.info('PfSense service restarted')
+        # logging.info(stdout.read().decode())
     except Exception as e:
-        print(f"Conexión fallida: {e}")
+        logging.info(f"Conexión fallida: {e}")
     finally:
-        print('Service restart finished!')
+        logging.info('Service restart finished!')
         ssh.close()
 
 # --------------------------------------------------------
@@ -213,7 +213,7 @@ def insert_into_malicious_ip_addresses_table(ip, description):
                 sql = "INSERT INTO malicious_ip_addresses (ip_address, description) VALUES (%s, %s)"
                 cursor.execute(sql, (ip, description))
                 connection.commit()
-                print(f"IP {ip} added successfully")
+                logging.info(f"IP {ip} added successfully")
 
     finally:
         connection.close()
@@ -229,7 +229,7 @@ def check_fraud_score(ip_address):
     if response.status_code == 200:
         data = response.json()
         if data['success'] and data['fraud_score'] >= 75:
-            print('IP checked!', ip_address)
+            logging.info('IP checked!', ip_address)
             return ip_address
 
 def map_check_fraud_score(ips):
@@ -285,7 +285,7 @@ def insert_into_positive_negatives_ip_addresses_table(ip, description):
                 sql = "INSERT INTO positive_negatives (ip_address, description) VALUES (%s, %s)"
                 cursor.execute(sql, (ip, description))
                 connection.commit()
-                print(f"IP {ip} added successfully positive_negatives table")
+                logging.info(f"IP {ip} added successfully positive_negatives table")
 
     finally:
         connection.close()
@@ -309,7 +309,7 @@ def insert_into_commitment_indicators_ip_addresses_table(ip):
                 sql = "INSERT INTO commitment_indicators (ip_address) VALUES (%s)"
                 cursor.execute(sql, (ip))
                 connection.commit()
-                print(f"IP {ip} added successfully into commitment_indicators table")
+                logging.info(f"IP {ip} added successfully into commitment_indicators table")
 
     finally:
         connection.close()
@@ -318,7 +318,7 @@ def insert_into_commitment_indicators_ip_addresses_table(ip):
 def map_inserts_positive_negatives_tables(ips_array):
     for ip in ips_array:
         insert_into_positive_negatives_ip_addresses_table(ip)
-    print('Ip addresses inserted successfully!')
+    logging.info('Ip addresses inserted successfully!')
 
 # -------------------------------------------------------
 # For to check and run script again
