@@ -336,12 +336,12 @@ def main():
     filtered_ips_object = pfsense_ips()
     filtered_ips = list(filtered_ips_object.keys())
     ips_db = database_ips()
-    ips_db.append('103.129.222.46') # for testing
-    ips_db.append('178.128.23.9') # for testing
+    #ips_db.append('103.129.222.46') # for testing
+    #ips_db.append('178.128.23.9') # for testing
     malicious_ips_db = match_ips_pfsense_and_db(filtered_ips, ips_db)
     if( len(malicious_ips_db) > 0 ):
         print("db")
-        #change_xml_file('./config.xml', malicious_ips_db)
+        change_xml_file('./config.xml', malicious_ips_db)
         for ip in malicious_ips_db:
             if ip in filtered_ips_object:
                 description = filtered_ips_object[ip][0]  

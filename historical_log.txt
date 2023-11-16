@@ -6,3 +6,5 @@
 2023-11-15 23:53:01,047 INFO:File modified. Running historical.py
 2023-11-15 23:53:02,853 INFO:File modified. Running historical.py
 2023-11-16 01:22:32,808 INFO:File modified. Running historical.py
+2023-11-16 01:23:32,709 INFO:Script historical.py started
+2023-11-16 01:25:29,592 INFO:Script historical.py stopped
