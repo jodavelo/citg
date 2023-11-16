@@ -8,3 +8,31 @@
 2023-11-16 01:22:32,808 INFO:File modified. Running historical.py
 2023-11-16 01:23:32,709 INFO:Script historical.py started
 2023-11-16 01:25:29,592 INFO:Script historical.py stopped
+2023-11-16 18:32:50,107 INFO:Script historical.py started
+2023-11-16 18:32:50,294 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-16 18:32:50,381 INFO:Authentication (password) successful!
+2023-11-16 18:32:50,441 INFO:Copied file from PfSense!
+2023-11-16 18:32:50,444 INFO:Rules created successfully
+2023-11-16 18:32:50,455 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-16 18:32:50,542 INFO:Authentication (password) successful!
+2023-11-16 18:32:50,601 INFO:Copied file to PfSense!
+2023-11-16 18:32:50,611 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-16 18:32:50,699 INFO:Authentication (password) successful!
+2023-11-16 18:32:50,745 INFO:PfSense service restarted
+2023-11-16 18:32:50,745 INFO:Service restart finished!
+2023-11-16 18:33:29,684 INFO:Script historical.py started
+2023-11-16 18:34:21,948 INFO:Script historical.py started
+2023-11-16 18:34:36,362 INFO:Script historical.py stopped
+2023-11-16 18:35:17,240 INFO:Script historical.py started
+2023-11-16 18:35:17,426 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-16 18:35:17,513 INFO:Authentication (password) successful!
+2023-11-16 18:35:17,573 INFO:Copied file from PfSense!
+2023-11-16 18:35:17,575 INFO:Rules created successfully
+2023-11-16 18:35:17,585 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-16 18:35:17,671 INFO:Authentication (password) successful!
+2023-11-16 18:35:17,728 INFO:Copied file to PfSense!
+2023-11-16 18:35:17,741 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-16 18:35:17,829 INFO:Authentication (password) successful!
+2023-11-16 18:35:17,881 INFO:PfSense service restarted
+2023-11-16 18:35:17,881 INFO:Service restart finished!
+2023-11-16 18:39:15,619 INFO:Script historical.py stopped

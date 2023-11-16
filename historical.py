@@ -187,6 +187,28 @@ def restart_pfsense_service():
         logging.info('Service restart finished!')
         ssh.close()
 
+def file_manager(ips):
+    # Configuration for to connect
+    server = '192.168.1.1'
+    port = 22
+    user = 'admin'
+    password = '123456789'
+    remote_path = '/cf/conf/config.xml'
+    local_path = './config.xml'
+
+    print( ips )
+
+    # Copy from remote server
+    copy_from_remote(server, port, user, password, remote_path, local_path)
+
+    # Modify file
+    change_xml_file('./config.xml', ips)
+
+    # Copy to remote server
+    copy_to_remote(server, port, user, password, local_path, remote_path)
+    restart_pfsense_service()
+    print('file manager finished!')
+
 # --------------------------------------------------------
 # Suricata Syslog and DB
 # --------------------------------------------------------
@@ -341,7 +363,9 @@ def main():
     malicious_ips_db = match_ips_pfsense_and_db(filtered_ips, ips_db)
     if( len(malicious_ips_db) > 0 ):
         print("db")
-        change_xml_file('./config.xml', malicious_ips_db)
+        print(list(malicious_ips_db))
+        #change_xml_file('./config.xml', malicious_ips_db)
+        file_manager(list(malicious_ips_db))
         for ip in malicious_ips_db:
             if ip in filtered_ips_object:
                 description = filtered_ips_object[ip][0]  

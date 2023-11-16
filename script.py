@@ -225,14 +225,14 @@ def file_manager(ips):
     print( ips )
 
     # Copy from remote server
-    #copy_from_remote(server, port, user, password, remote_path, local_path)
+    copy_from_remote(server, port, user, password, remote_path, local_path)
 
     # Modify file
-    #change_xml_file('./config.xml', ips)
+    change_xml_file('./config.xml', ips)
 
     # Copy to remote server
-    #copy_to_remote(server, port, user, password, local_path, remote_path)
-    #restart_pfsense_service()
+    copy_to_remote(server, port, user, password, local_path, remote_path)
+    restart_pfsense_service()
     print('file manager finished!')
 
 

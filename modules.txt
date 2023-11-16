@@ -1,1 +1,2 @@
-pip install paramiko scp
+pip3 install paramiko scp
+pip3 install python-dotenv
