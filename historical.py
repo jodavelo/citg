@@ -19,8 +19,18 @@ import asyncio
 
 import logging
 
+import signal
+import sys
+
 logging.basicConfig(filename='historical_log.txt', level=logging.INFO, 
                     format='%(asctime)s %(levelname)s:%(message)s')
+
+def signal_handler(signum, frame):
+    print("Señal de terminación recibida, cerrando el script...")
+    # Aquí puedes agregar cualquier limpieza necesaria
+    sys.exit(0)
+
+signal.signal(signal.SIGTERM, signal_handler)
 
 # ------------------------------------------------------------
 # Changing xml file - General
@@ -80,7 +90,7 @@ def change_xml_file(path, array_ips):
     for ip in array_ips:  
         if not rule_exists(existing_rules, ip):
             new_rule = ET.fromstring(create_rule_xml_string(ip, 'citg'))
-            logging.info('Rule created ', ip)
+            print('Rule created ', ip)
             filter_tag.append(new_rule)
 
     new_xml_string = ET.tostring(root, encoding='unicode')
@@ -245,14 +255,15 @@ def insert_into_malicious_ip_addresses_table(ip, description):
 # IP Reputation
 # -------------------------------------------------------
 def check_fraud_score(ip_address):
-    url = f"https://ipqualityscore.com/api/json/ip/apikey/{ip_address}?strictness=1"
+    url = f"https://ipqualityscore.com/api/json/ip/r8gzGddTBOHUKimOW4yFGpJINdVhssR9/{ip_address}?strictness=1"
     response = requests.get(url)
     
     if response.status_code == 200:
         data = response.json()
         if data['success'] and data['fraud_score'] >= 75:
-            logging.info('IP checked!', ip_address)
-            return ip_address
+            print(ip_address)
+        #     logging.info('IP checked!', ip_address)
+            return f'{ip_address}'
 
 def map_check_fraud_score(ips):
     high_risk_ips = []
@@ -370,6 +381,14 @@ def main():
             if ip in filtered_ips_object:
                 description = filtered_ips_object[ip][0]  
                 insert_into_malicious_ip_addresses_table(ip, description)
+        for ip_filtered in filtered_ips:
+            if ip_filtered not in ips_db:
+                ip_of_quality = check_fraud_score(ip_filtered)
+                if ip_of_quality:
+                    description = filtered_ips_object[ip_of_quality][0]  
+                    insert_into_positive_negatives_ip_addresses_table(ip_of_quality, description)
+                    insert_into_commitment_indicators_ip_addresses_table(ip_of_quality)
+                # print(ip_of_quality)
     if( len(malicious_ips_db) < 1 ):
         # ips = get_ip_addresses_db('positive_negatives')
         # print(ips)

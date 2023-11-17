@@ -36,3 +36,99 @@
 2023-11-16 18:35:17,881 INFO:PfSense service restarted
 2023-11-16 18:35:17,881 INFO:Service restart finished!
 2023-11-16 18:39:15,619 INFO:Script historical.py stopped
+2023-11-17 00:44:36,447 INFO:Script historical.py started
+2023-11-17 00:45:31,685 INFO:File modified. Running historical.py
+2023-11-17 00:48:52,038 INFO:File modified. Running historical.py
+2023-11-17 00:55:27,587 INFO:File modified. Running historical.py
+2023-11-17 00:56:33,467 INFO:File modified. Running historical.py
+2023-11-17 00:57:08,664 INFO:File modified. Running historical.py
+2023-11-17 00:58:39,344 INFO:File modified. Running historical.py
+2023-11-17 00:59:14,907 INFO:File modified. Running historical.py
+2023-11-17 00:59:30,557 INFO:File modified. Running historical.py
+2023-11-17 01:00:36,199 INFO:File modified. Running historical.py
+2023-11-17 01:01:06,805 INFO:File modified. Running historical.py
+2023-11-17 01:01:57,519 INFO:File modified. Running historical.py
+2023-11-17 01:02:23,287 INFO:File modified. Running historical.py
+2023-11-17 01:07:54,233 INFO:File modified. Running historical.py
+2023-11-17 01:09:19,989 INFO:File modified. Running historical.py
+2023-11-17 01:10:45,643 INFO:File modified. Running historical.py
+2023-11-17 01:10:46,057 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-17 01:10:46,145 INFO:Authentication (password) successful!
+2023-11-17 01:10:46,208 INFO:Copied file from PfSense!
+2023-11-17 01:10:46,213 INFO:Rules created successfully
+2023-11-17 01:10:46,224 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-17 01:10:46,312 INFO:Authentication (password) successful!
+2023-11-17 01:10:46,377 INFO:Copied file to PfSense!
+2023-11-17 01:10:46,389 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-17 01:10:46,480 INFO:Authentication (password) successful!
+2023-11-17 01:10:46,527 INFO:PfSense service restarted
+2023-11-17 01:10:46,527 INFO:Service restart finished!
+2023-11-17 01:10:46,986 INFO:IP 185.101.21.232 added successfully positive_negatives table
+2023-11-17 01:10:46,990 INFO:IP 185.101.21.232 added successfully into commitment_indicators table
+2023-11-17 01:11:07,007 INFO:File modified. Running historical.py
+2023-11-17 01:11:07,332 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-17 01:11:07,427 INFO:Authentication (password) successful!
+2023-11-17 01:11:07,492 INFO:Copied file from PfSense!
+2023-11-17 01:11:07,495 INFO:Rules created successfully
+2023-11-17 01:11:07,508 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-17 01:11:07,597 INFO:Authentication (password) successful!
+2023-11-17 01:11:07,656 INFO:Copied file to PfSense!
+2023-11-17 01:11:07,667 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-17 01:11:07,756 INFO:Authentication (password) successful!
+2023-11-17 01:11:07,806 INFO:PfSense service restarted
+2023-11-17 01:11:07,807 INFO:Service restart finished!
+2023-11-17 01:11:07,816 INFO:IP 185.101.21.232 added successfully
+2023-11-17 01:16:13,087 INFO:File modified. Running historical.py
+2023-11-17 01:16:13,383 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-17 01:16:13,472 INFO:Authentication (password) successful!
+2023-11-17 01:16:13,538 INFO:Copied file from PfSense!
+2023-11-17 01:16:13,541 INFO:Rules created successfully
+2023-11-17 01:16:13,552 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-17 01:16:13,639 INFO:Authentication (password) successful!
+2023-11-17 01:16:13,698 INFO:Copied file to PfSense!
+2023-11-17 01:16:13,709 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-17 01:16:13,796 INFO:Authentication (password) successful!
+2023-11-17 01:16:13,843 INFO:PfSense service restarted
+2023-11-17 01:16:13,844 INFO:Service restart finished!
+2023-11-17 01:16:14,472 INFO:IP 1.55.39.38 added successfully positive_negatives table
+2023-11-17 01:16:14,477 INFO:IP 1.55.39.38 added successfully into commitment_indicators table
+2023-11-17 01:16:59,521 INFO:File modified. Running historical.py
+2023-11-17 01:16:59,728 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-17 01:16:59,817 INFO:Authentication (password) successful!
+2023-11-17 01:16:59,883 INFO:Copied file from PfSense!
+2023-11-17 01:16:59,886 INFO:Rules created successfully
+2023-11-17 01:16:59,897 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-17 01:16:59,986 INFO:Authentication (password) successful!
+2023-11-17 01:17:00,045 INFO:Copied file to PfSense!
+2023-11-17 01:17:00,071 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-17 01:17:00,160 INFO:Authentication (password) successful!
+2023-11-17 01:17:00,207 INFO:PfSense service restarted
+2023-11-17 01:17:00,207 INFO:Service restart finished!
+2023-11-17 01:17:00,218 INFO:IP 1.55.39.38 added successfully
+2023-11-17 01:20:35,430 INFO:File modified. Running historical.py
+2023-11-17 01:20:35,716 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-17 01:20:35,805 INFO:Authentication (password) successful!
+2023-11-17 01:20:35,865 INFO:Copied file from PfSense!
+2023-11-17 01:20:35,868 INFO:Rules created successfully
+2023-11-17 01:20:35,879 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-17 01:20:35,969 INFO:Authentication (password) successful!
+2023-11-17 01:20:36,026 INFO:Copied file to PfSense!
+2023-11-17 01:20:36,037 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-17 01:20:36,124 INFO:Authentication (password) successful!
+2023-11-17 01:20:36,175 INFO:PfSense service restarted
+2023-11-17 01:20:36,175 INFO:Service restart finished!
+2023-11-17 01:20:36,783 INFO:IP 1.116.76.185 added successfully positive_negatives table
+2023-11-17 01:20:36,787 INFO:IP 1.116.76.185 added successfully into commitment_indicators table
+2023-11-17 01:33:27,459 INFO:File modified. Running historical.py
+2023-11-17 01:33:27,633 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-17 01:33:27,724 INFO:Authentication (password) successful!
+2023-11-17 01:33:27,786 INFO:Copied file from PfSense!
+2023-11-17 01:33:27,789 INFO:Rules created successfully
+2023-11-17 01:33:27,799 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-17 01:33:27,887 INFO:Authentication (password) successful!
+2023-11-17 01:33:27,946 INFO:Copied file to PfSense!
+2023-11-17 01:33:27,956 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-17 01:33:28,043 INFO:Authentication (password) successful!
+2023-11-17 01:33:28,090 INFO:PfSense service restarted
+2023-11-17 01:33:28,090 INFO:Service restart finished!
+2023-11-17 01:33:28,100 INFO:IP 1.116.76.185 added successfully

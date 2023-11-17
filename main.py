@@ -16,12 +16,28 @@ import subprocess
 import asyncio
 
 import logging
+import subprocess
 
 procesos_activos = {}
 
 app = FastAPI()
 
 # def handle_filter_selection()
+
+
+def kill_historical_processes():
+    try:
+        # Encuentra procesos 'historical.py' y obtén sus IDs de proceso (PIDs)
+        result = subprocess.run(['pgrep', '-f', 'historical.py'], capture_output=True, text=True)
+        pids = result.stdout.strip().split('\n')
+
+        # Mata cada proceso encontrado
+        for pid in pids:
+            subprocess.run(['kill', '-9', pid])
+        print(f"Process {pids} finished!.")
+    except Exception as e:
+        print(f"Error al intentar terminar procesos: {e}")
+
 
 class FilterSelection(BaseModel):
     use_history_ips: bool = False
@@ -320,46 +336,23 @@ logging.basicConfig(filename='historical_log.txt', level=logging.INFO,
 @app.get("/filter_select/{option}")
 async def filter_select(option):
     global procesos_activos
-    server = '192.168.1.1'
-    port = 22
-    user = 'admin'
-    password = '123456789'
-    remote_path = '/cf/conf/config.xml'
-    local_path = './config.xml'
-    filtered_ips_object = pfsense_ips()
-    filtered_ips = list(filtered_ips_object.keys())
-    # Copy from remote server
-    #####copy_from_remote(server, port, user, password, remote_path, local_path) !dont forget enable this call to function when all development phase is completed
     try:
         if( option == "historical" ):
             procesos_activos['historical'] = await asyncio.create_subprocess_exec('python3', 'historical.py')
             logging.info("Script historical.py started")
-            # ips_db = database_ips()
-            # #ips_db.append('103.129.222.46') # for testing
-            # #ips_db.append('178.128.23.9') # for testing
-            # malicious_ips_db = match_ips_pfsense_and_db(filtered_ips, ips_db)
-            # if( len(malicious_ips_db) > 0 ):
-            #     for ip in malicious_ips_db:
-            #         if ip in filtered_ips_object:
-            #             description = filtered_ips_object[ip][0]  
-            #             insert_into_malicious_ip_addresses_table(ip, description)
-            #             print("ip added", ip)
-            # if( len(malicious_ips_db) < 1 ):
-            #     # ips = get_ip_addresses_db('positive_negatives')
-            #     # print(ips)
-            #     high_risk_ips = map_check_fraud_score( filtered_ips )
-            #     print( high_risk_ips )
-            # print(malicious_ips_db)
-            # print(filtered_ips)
+            
             return { "message": "historical" }
-        if( option == "reputation" ):
-            proceso_historical = procesos_activos.get('historical')
-            if proceso_historical:
-                proceso_historical.terminate()
-                await proceso_historical.wait()
-                del procesos_activos['historical']
-                logging.info("Script historical.py stopped")
-            return { "message": "ip reputation" }
+        elif option == "reputation":
+            kill_historical_processes()
+            # Detén 'historical.py' si está en ejecución
+            # proceso_historical = procesos_activos.get('historical')
+            # if proceso_historical:
+            #     proceso_historical.terminate()
+            #     await proceso_historical.wait()
+            #     del procesos_activos['historical']
+            #     logging.info("Script historical.py detenido")
+
+            return {"message": option}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
