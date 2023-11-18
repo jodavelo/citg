@@ -22,6 +22,17 @@ import logging
 import signal
 import sys
 
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+DB_USER = os.getenv('DB_USER')
+DB_PASSWORD = os.getenv('DB_PASSWORD')
+DB_NAME = os.getenv('DB_NAME')
+FW_USER = os.getenv('FW_USER')
+FW_PASSWORD = os.getenv('FW_PASSWORD')
+
 logging.basicConfig(filename='historical_log.txt', level=logging.INFO, 
                     format='%(asctime)s %(levelname)s:%(message)s')
 
@@ -133,10 +144,10 @@ def pfsense_ips():
 def database_ips():
     # DB config
     config = {
-        'user': 'root',
-        'password': 'root',
+        'user': DB_USER,
+        'password': DB_PASSWORD,
         'host': 'localhost',  
-        'database': 'citg',
+        'database': DB_NAME,
         'raise_on_warnings': True
     }
 
@@ -179,9 +190,8 @@ def copy_to_remote(server, port, user, password, local_path, remote_path):
 
 def restart_pfsense_service():
     pfSense_ip = "192.168.1.1"
-    pfSense_user = "admin"
-    pfSense_password = "123456789"
-
+    pfSense_user = FW_USER
+    pfSense_password = FW_PASSWORD
 
     ssh = paramiko.SSHClient()
     ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
@@ -201,8 +211,8 @@ def file_manager(ips):
     # Configuration for to connect
     server = '192.168.1.1'
     port = 22
-    user = 'admin'
-    password = '123456789'
+    user = FW_USER
+    password = FW_PASSWORD
     remote_path = '/cf/conf/config.xml'
     local_path = './config.xml'
 
@@ -229,9 +239,9 @@ def match_ips_pfsense_and_db(filtered_ips, ips_db):
 def insert_into_malicious_ip_addresses_table(ip, description):
     connection_params = {
         'host': 'localhost',
-        'user': 'root',
-        'password': 'root',
-        'db': 'citg',
+        'user': DB_USER,
+        'password': DB_PASSWORD,
+        'db': DB_NAME,
         'charset': 'utf8mb4',
         'cursorclass': pymysql.cursors.DictCursor
     }
@@ -278,10 +288,10 @@ def map_check_fraud_score(ips):
 def get_ip_addresses_db(table_name):
     # DB config
     config = {
-        'user': 'root',
-        'password': 'root',
+        'user': DB_USER,
+        'password': DB_PASSWORD,
         'host': 'localhost',  
-        'database': 'citg',
+        'database': DB_NAME,
         'raise_on_warnings': True
     }
 
@@ -302,9 +312,9 @@ def get_ip_addresses_db(table_name):
 def insert_into_positive_negatives_ip_addresses_table(ip, description):
     connection_params = {
         'host': 'localhost',
-        'user': 'root',
-        'password': 'root',
-        'db': 'citg',
+        'user': DB_USER,
+        'password': DB_PASSWORD,
+        'db': DB_NAME,
         'charset': 'utf8mb4',
         'cursorclass': pymysql.cursors.DictCursor
     }
@@ -326,9 +336,9 @@ def insert_into_positive_negatives_ip_addresses_table(ip, description):
 def insert_into_commitment_indicators_ip_addresses_table(ip):
     connection_params = {
         'host': 'localhost',
-        'user': 'root',
-        'password': 'root',
-        'db': 'citg',
+        'user': DB_USER,
+        'password': DB_PASSWORD,
+        'db': DB_NAME,
         'charset': 'utf8mb4',
         'cursorclass': pymysql.cursors.DictCursor
     }

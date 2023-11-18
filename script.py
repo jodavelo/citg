@@ -10,6 +10,17 @@ import xml.etree.ElementTree as ET
 import time
 
 
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+DB_USER = os.getenv('DB_USER')
+DB_PASSWORD = os.getenv('DB_PASSWORD')
+DB_NAME = os.getenv('DB_NAME')
+FW_USER = os.getenv('FW_USER')
+FW_PASSWORD = os.getenv('FW_PASSWORD')
+
 # Verification Flags
 sysLogDb = False
 sysLogIPRep = False
@@ -125,10 +136,10 @@ filtered_ips = pfsense_ips()
 def database_ips():
     # DB config
     config = {
-        'user': 'root',
-        'password': 'root',
+        'user': DB_USER,
+        'password': DB_PASSWORD,
         'host': 'localhost',  
-        'database': 'citg',
+        'database': DB_NAME,
         'raise_on_warnings': True
     }
 
@@ -195,8 +206,8 @@ def copy_to_remote(server, port, user, password, local_path, remote_path):
 
 def restart_pfsense_service():
     pfSense_ip = "192.168.1.1"
-    pfSense_user = "admin"
-    pfSense_password = "123456789"
+    pfSense_user = FW_USER
+    pfSense_password = FW_PASSWORD
 
 
     ssh = paramiko.SSHClient()
@@ -217,8 +228,8 @@ def file_manager(ips):
     # Configuration for to connect
     server = '192.168.1.1'
     port = 22
-    user = 'admin'
-    password = '123456789'
+    user = FW_USER
+    password = FW_PASSWORD
     remote_path = '/cf/conf/config.xml'
     local_path = './config.xml'
 

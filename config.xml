@@ -1,21 +1,20 @@
-<?xml version="1.0"?>
 <pfsense>
 	<version>22.9</version>
-	<lastchange></lastchange>
+	<lastchange />
 	<system>
 		<optimization>normal</optimization>
 		<hostname>pfSense</hostname>
 		<domain>home.arpa</domain>
-		<dnsallowoverride></dnsallowoverride>
+		<dnsallowoverride />
 		<group>
 			<name>all</name>
-			<description><![CDATA[All Users]]></description>
+			<description>All Users</description>
 			<scope>system</scope>
 			<gid>1998</gid>
 		</group>
 		<group>
 			<name>admins</name>
-			<description><![CDATA[System Administrators]]></description>
+			<description>System Administrators</description>
 			<scope>system</scope>
 			<gid>1999</gid>
 			<member>0</member>
@@ -23,16 +22,16 @@
 		</group>
 		<user>
 			<name>admin</name>
-			<descr><![CDATA[System Administrator]]></descr>
+			<descr>System Administrator</descr>
 			<scope>system</scope>
 			<groupname>admins</groupname>
 			<uid>0</uid>
 			<priv>user-shell-access</priv>
 			<bcrypt-hash>$2y$10$YQYQTpjCVmSXk2xHm5YL1uZcEmbk2PfTDsUzjotX58kXeHu7qH.je</bcrypt-hash>
-			<expires></expires>
+			<expires />
 			<dashboardcolumns>2</dashboardcolumns>
-			<authorizedkeys></authorizedkeys>
-			<ipsecpsk></ipsecpsk>
+			<authorizedkeys />
+			<ipsecpsk />
 			<webguicss>pfSense.css</webguicss>
 		</user>
 		<nextuid>2000</nextuid>
@@ -40,13 +39,13 @@
 		<timeservers>2.pfsense.pool.ntp.org</timeservers>
 		<webgui>
 			<protocol>https</protocol>
-			<loginautocomplete></loginautocomplete>
+			<loginautocomplete />
 			<ssl-certref>653d60982526e</ssl-certref>
 			<dashboardcolumns>2</dashboardcolumns>
 			<max_procs>2</max_procs>
 		</webgui>
 		<disablenatreflection>yes</disablenatreflection>
-		<ipv6allow></ipv6allow>
+		<ipv6allow />
 		<maximumtableentries>400000</maximumtableentries>
 		<powerd_ac_mode>hadp</powerd_ac_mode>
 		<powerd_battery_mode>hadp</powerd_battery_mode>
@@ -54,53 +53,53 @@
 		<bogons>
 			<interval>monthly</interval>
 		</bogons>
-		<hn_altq_enable></hn_altq_enable>
-		<already_run_config_upgrade></already_run_config_upgrade>
+		<hn_altq_enable />
+		<already_run_config_upgrade />
 		<ssh>
 			<enable>enabled</enable>
 			<sshdagentforwarding>enabled</sshdagentforwarding>
 			<port>22</port>
 		</ssh>
-		<disablesegmentationoffloading></disablesegmentationoffloading>
-		<disablelargereceiveoffloading></disablelargereceiveoffloading>
-		<disablechecksumoffloading></disablechecksumoffloading>
+		<disablesegmentationoffloading />
+		<disablelargereceiveoffloading />
+		<disablechecksumoffloading />
 		<serialspeed>115200</serialspeed>
 		<primaryconsole>video</primaryconsole>
 	</system>
 	<interfaces>
 		<wan>
-			<enable></enable>
+			<enable />
 			<if>em0</if>
-			<mtu></mtu>
+			<mtu />
 			<ipaddr>dhcp</ipaddr>
 			<ipaddrv6>dhcp6</ipaddrv6>
-			<subnet></subnet>
-			<gateway></gateway>
-			<blockpriv></blockpriv>
-			<blockbogons></blockbogons>
-			<dhcphostname></dhcphostname>
-			<media></media>
-			<mediaopt></mediaopt>
-			<dhcp6-duid></dhcp6-duid>
+			<subnet />
+			<gateway />
+			<blockpriv />
+			<blockbogons />
+			<dhcphostname />
+			<media />
+			<mediaopt />
+			<dhcp6-duid />
 			<dhcp6-ia-pd-len>0</dhcp6-ia-pd-len>
 		</wan>
 		<lan>
-			<enable></enable>
+			<enable />
 			<if>em1</if>
 			<ipaddr>192.168.1.1</ipaddr>
 			<subnet>24</subnet>
 			<ipaddrv6>track6</ipaddrv6>
 			<subnetv6>64</subnetv6>
-			<media></media>
-			<mediaopt></mediaopt>
+			<media />
+			<mediaopt />
 			<track6-interface>wan</track6-interface>
 			<track6-prefix-id>0</track6-prefix-id>
 		</lan>
 	</interfaces>
-	<staticroutes></staticroutes>
+	<staticroutes />
 	<dhcpd>
 		<lan>
-			<enable></enable>
+			<enable />
 			<range>
 				<from>192.168.1.100</from>
 				<to>192.168.1.199</to>
@@ -109,7 +108,7 @@
 	</dhcpd>
 	<dhcpdv6>
 		<lan>
-			<enable></enable>
+			<enable />
 			<range>
 				<from>::1000</from>
 				<to>::2000</to>
@@ -119,12 +118,12 @@
 		</lan>
 	</dhcpdv6>
 	<snmpd>
-		<syslocation></syslocation>
-		<syscontact></syscontact>
+		<syslocation />
+		<syscontact />
 		<rocommunity>public</rocommunity>
 	</snmpd>
 	<diag>
-		<ipv6nat></ipv6nat>
+		<ipv6nat />
 	</diag>
 	<syslog>
 		<filterdescriptions>1</filterdescriptions>
@@ -138,68 +137,194 @@
 		<rule>
 			<type>pass</type>
 			<ipprotocol>inet</ipprotocol>
-			<descr><![CDATA[Default allow LAN to any rule]]></descr>
+			<descr>Default allow LAN to any rule</descr>
 			<interface>lan</interface>
 			<tracker>0100000101</tracker>
 			<source>
 				<network>lan</network>
 			</source>
 			<destination>
-				<any></any>
+				<any />
 			</destination>
 		</rule>
 		<rule>
 			<type>pass</type>
 			<ipprotocol>inet6</ipprotocol>
-			<descr><![CDATA[Default allow LAN IPv6 to any rule]]></descr>
+			<descr>Default allow LAN IPv6 to any rule</descr>
 			<interface>lan</interface>
 			<tracker>0100000102</tracker>
 			<source>
 				<network>lan</network>
 			</source>
 			<destination>
-				<any></any>
+				<any />
 			</destination>
 		</rule>
 		<rule>
-			<id></id>
+			<id />
 			<tracker>1698864368</tracker>
 			<type>block</type>
 			<interface>lan</interface>
 			<ipprotocol>inet</ipprotocol>
-			<tag></tag>
-			<tagged></tagged>
-			<max></max>
-			<max-src-nodes></max-src-nodes>
-			<max-src-conn></max-src-conn>
-			<max-src-states></max-src-states>
-			<statetimeout></statetimeout>
-			<statetype><![CDATA[keep state]]></statetype>
-			<os></os>
+			<tag />
+			<tagged />
+			<max />
+			<max-src-nodes />
+			<max-src-conn />
+			<max-src-states />
+			<statetimeout />
+			<statetype>keep state</statetype>
+			<os />
 			<source>
 				<address>200.200.200.200</address>
 			</source>
 			<destination>
-				<any></any>
+				<any />
 			</destination>
-			<descr><![CDATA[daniel]]></descr>
+			<descr>daniel</descr>
 			<updated>
 				<time>1698864368</time>
-				<username><![CDATA[admin@192.168.1.103 (Local Database)]]></username>
+				<username>admin@192.168.1.103 (Local Database)</username>
 			</updated>
 			<created>
 				<time>1698864368</time>
-				<username><![CDATA[admin@192.168.1.103 (Local Database)]]></username>
+				<username>admin@192.168.1.103 (Local Database)</username>
 			</created>
 		</rule>
-	</filter>
+	<rule>
+        <id />
+        <tracker>1700322867</tracker>
+        <type>block</type>
+        <interface>lan</interface>
+        <ipprotocol>inet</ipprotocol>
+        <source>
+            <address>102.130.113.9</address>
+        </source>
+        <destination>
+            <any />
+        </destination>
+        <descr>citg</descr>
+        <updated>
+            <time>1700322867</time>
+            <username>admin@192.168.1.103 (Local Database)</username>
+        </updated>
+        <created>
+            <time>1700322867</time>
+            <username>admin@192.168.1.103 (Local Database)</username>
+        </created>
+    </rule><rule>
+        <id />
+        <tracker>1700322867</tracker>
+        <type>block</type>
+        <interface>lan</interface>
+        <ipprotocol>inet</ipprotocol>
+        <source>
+            <address>185.101.21.232</address>
+        </source>
+        <destination>
+            <any />
+        </destination>
+        <descr>citg</descr>
+        <updated>
+            <time>1700322867</time>
+            <username>admin@192.168.1.103 (Local Database)</username>
+        </updated>
+        <created>
+            <time>1700322867</time>
+            <username>admin@192.168.1.103 (Local Database)</username>
+        </created>
+    </rule><rule>
+        <id />
+        <tracker>1700322867</tracker>
+        <type>block</type>
+        <interface>lan</interface>
+        <ipprotocol>inet</ipprotocol>
+        <source>
+            <address>103.129.222.46</address>
+        </source>
+        <destination>
+            <any />
+        </destination>
+        <descr>citg</descr>
+        <updated>
+            <time>1700322867</time>
+            <username>admin@192.168.1.103 (Local Database)</username>
+        </updated>
+        <created>
+            <time>1700322867</time>
+            <username>admin@192.168.1.103 (Local Database)</username>
+        </created>
+    </rule><rule>
+        <id />
+        <tracker>1700322867</tracker>
+        <type>block</type>
+        <interface>lan</interface>
+        <ipprotocol>inet</ipprotocol>
+        <source>
+            <address>1.55.39.38</address>
+        </source>
+        <destination>
+            <any />
+        </destination>
+        <descr>citg</descr>
+        <updated>
+            <time>1700322867</time>
+            <username>admin@192.168.1.103 (Local Database)</username>
+        </updated>
+        <created>
+            <time>1700322867</time>
+            <username>admin@192.168.1.103 (Local Database)</username>
+        </created>
+    </rule><rule>
+        <id />
+        <tracker>1700322867</tracker>
+        <type>block</type>
+        <interface>lan</interface>
+        <ipprotocol>inet</ipprotocol>
+        <source>
+            <address>1.116.76.185</address>
+        </source>
+        <destination>
+            <any />
+        </destination>
+        <descr>citg</descr>
+        <updated>
+            <time>1700322867</time>
+            <username>admin@192.168.1.103 (Local Database)</username>
+        </updated>
+        <created>
+            <time>1700322867</time>
+            <username>admin@192.168.1.103 (Local Database)</username>
+        </created>
+    </rule><rule>
+        <id />
+        <tracker>1700322867</tracker>
+        <type>block</type>
+        <interface>lan</interface>
+        <ipprotocol>inet</ipprotocol>
+        <source>
+            <address>178.128.23.9</address>
+        </source>
+        <destination>
+            <any />
+        </destination>
+        <descr>citg</descr>
+        <updated>
+            <time>1700322867</time>
+            <username>admin@192.168.1.103 (Local Database)</username>
+        </updated>
+        <created>
+            <time>1700322867</time>
+            <username>admin@192.168.1.103 (Local Database)</username>
+        </created>
+    </rule></filter>
 	<shaper>
 	</shaper>
 	<ipsec>
-		<client></client>
+		<client />
 	</ipsec>
-	<aliases></aliases>
-	<proxyarp></proxyarp>
+	<aliases />
+	<proxyarp />
 	<cron>
 		<item>
 			<minute>*/1</minute>
@@ -310,44 +435,44 @@
 			<command>/usr/bin/nice -n20 /usr/local/bin/php-cgi -f /usr/local/pkg/suricata/suricata_check_for_rule_updates.php</command>
 		</item>
 	</cron>
-	<wol></wol>
+	<wol />
 	<rrd>
-		<enable></enable>
+		<enable />
 	</rrd>
 	<widgets>
 		<sequence>system_information:col1:open:0,disks:col1:open:0,interfaces:col2:open:0,traffic_graphs:col2:open:0,services_status:col2:open:0</sequence>
 		<period>10</period>
 	</widgets>
-	<openvpn></openvpn>
+	<openvpn />
 	<dnshaper>
 	</dnshaper>
 	<unbound>
-		<enable></enable>
-		<dnssec></dnssec>
-		<active_interface></active_interface>
-		<outgoing_interface></outgoing_interface>
-		<custom_options></custom_options>
-		<hideidentity></hideidentity>
-		<hideversion></hideversion>
-		<dnssecstripped></dnssecstripped>
+		<enable />
+		<dnssec />
+		<active_interface />
+		<outgoing_interface />
+		<custom_options />
+		<hideidentity />
+		<hideversion />
+		<dnssecstripped />
 	</unbound>
-	<vlans></vlans>
-	<qinqs></qinqs>
+	<vlans />
+	<qinqs />
 	<revision>
 		<time>1698864368</time>
-		<description><![CDATA[admin@192.168.1.103 (Local Database): Firewall: Rules - saved/edited a firewall rule.]]></description>
-		<username><![CDATA[admin@192.168.1.103 (Local Database)]]></username>
+		<description>admin@192.168.1.103 (Local Database): Firewall: Rules - saved/edited a firewall rule.</description>
+		<username>admin@192.168.1.103 (Local Database)</username>
 	</revision>
 	<gateways>
 	</gateways>
-	<captiveportal></captiveportal>
-	<dnsmasq></dnsmasq>
+	<captiveportal />
+	<dnsmasq />
 	<ntpd>
-		<gps></gps>
+		<gps />
 	</ntpd>
 	<cert>
 		<refid>653d60982526e</refid>
-		<descr><![CDATA[webConfigurator default (653d60982526e)]]></descr>
+		<descr>webConfigurator default (653d60982526e)</descr>
 		<type>server</type>
 		<crt>LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUVsRENDQTN5Z0F3SUJBZ0lJVFBCRU01MFQzTmd3RFFZSktvWklodmNOQVFFTEJRQXdXakU0TURZR0ExVUUKQ2hNdmNHWlRaVzV6WlNCM1pXSkRiMjVtYVdkMWNtRjBiM0lnVTJWc1ppMVRhV2R1WldRZ1EyVnlkR2xtYVdOaApkR1V4SGpBY0JnTlZCQU1URlhCbVUyVnVjMlV0TmpVelpEWXdPVGd5TlRJMlpUQWVGdzB5TXpFd01qZ3hPVEkzCk1qQmFGdzB5TkRFeE1qa3hPVEkzTWpCYU1Gb3hPREEyQmdOVkJBb1RMM0JtVTJWdWMyVWdkMlZpUTI5dVptbG4KZFhKaGRHOXlJRk5sYkdZdFUybG5ibVZrSUVObGNuUnBabWxqWVhSbE1SNHdIQVlEVlFRREV4VndabE5sYm5ObApMVFkxTTJRMk1EazRNalV5Tm1Vd2dnRWlNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0SUJEd0F3Z2dFS0FvSUJBUURLClJOWVpYVk9qNDVBcEUwVk91SXdmaytveVVHL1BvUXRnRWcvSTVFRjMrK3NNYm54UVlHMjVoaWc0QzB0KzcyYWEKeG9kTkIyNi9ZL2lKajNUZlhWZFNBN2xRdmRkQkxPejlMM2V1YmxkUVNPbFAxUzRKbTZJV3RFNlNYUG1WYUw1bwo0RDRZZVA3VWN4M0Q4TDErOC9jR3BBSHlsdEZiWnNxT2JzcGdWdjd2ODZRVlMyK2pVOC9QMWRIYzhYVUdXbW5qCjZrSnZMbTlOcmJTNXU1SXFUZDBCSXRsSGhPVTF3bDhWWFhISEh1TjBNVit0RjVjNW93VXE5SC80Q0tEbEwxRjYKQW1NQlZVbCtGaGJuTjBRZ21mc0owbW9ENnN5WHNKZkl4WUZyLy9CL3FLbVZlUXBOU0RCT1NoUWJiNE1MaSsvSgpJa3R1TTF6aWtVVXVwRkVCRUNPekFnTUJBQUdqZ2dGY01JSUJXREFKQmdOVkhSTUVBakFBTUJFR0NXQ0dTQUdHCitFSUJBUVFFQXdJR1FEQUxCZ05WSFE4RUJBTUNCYUF3TXdZSllJWklBWWI0UWdFTkJDWVdKRTl3Wlc1VFUwd2cKUjJWdVpYSmhkR1ZrSUZObGNuWmxjaUJEWlhKMGFXWnBZMkYwWlRBZEJnTlZIUTRFRmdRVVYrRjd4eXg5K2lmdApPTzJ4dHdibXFkbTRLN2t3Z1lzR0ExVWRJd1NCZ3pDQmdJQVVWK0Y3eHl4OStpZnRPTzJ4dHdibXFkbTRLN21oClhxUmNNRm94T0RBMkJnTlZCQW9UTDNCbVUyVnVjMlVnZDJWaVEyOXVabWxuZFhKaGRHOXlJRk5sYkdZdFUybG4KYm1Wa0lFTmxjblJwWm1sallYUmxNUjR3SEFZRFZRUURFeFZ3WmxObGJuTmxMVFkxTTJRMk1EazRNalV5Tm1XQwpDRXp3UkRPZEU5ellNQ2NHQTFVZEpRUWdNQjRHQ0NzR0FRVUZCd01CQmdnckJnRUZCUWNEQWdZSUt3WUJCUVVJCkFnSXdJQVlEVlIwUkJCa3dGNElWY0daVFpXNXpaUzAyTlROa05qQTVPREkxTWpabE1BMEdDU3FHU0liM0RRRUIKQ3dVQUE0SUJBUUFQRkVqY0JvWG5pMGtPR3AxUzV5S011V3VxSWhaNzR1Z1BEcTVrQlpLQUhSM0Q4MVZaWXZzcQovWlRnRm02akg1MmxzQ2E1YXVnTGR0SHhBdlRzZHBCRGtOOEhNaDVkZzRIY2lVWlZRSlNXWGlOMHh0RXdKTFVTCjFqWUEzSzc2ODJtSWN3eFJLUGQ1QmtCWTR3VmFDVlRFT3dsMVR4MHZzR0RRdEhNcmtmcmFYTHlVRG1TdTlSV2wKQ25JNExJck5wV1BIcnBRVFlDK09OOTBWanhmLzhqNnJ4S2F6VkhscmxEdVlGN0R6MW5OSWQ0MitzZjlzbjNDSgpqL1k3b2FXMnpGUEo3Um1HZVo5amVQVzg4Y25HYTdPNlF3QkdKWmtDSmhQYm1VaDlRNEFZa0FkdWZJRTNyZ0tJCmVBdERZelozTFhEakNtekRiVnVNVHkySS8wM1ZRU1luCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K</crt>
 		<prv>LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUV2UUlCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktjd2dnU2pBZ0VBQW9JQkFRREtSTllaWFZPajQ1QXAKRTBWT3VJd2ZrK295VUcvUG9RdGdFZy9JNUVGMysrc01ibnhRWUcyNWhpZzRDMHQrNzJhYXhvZE5CMjYvWS9pSgpqM1RmWFZkU0E3bFF2ZGRCTE96OUwzZXVibGRRU09sUDFTNEptNklXdEU2U1hQbVZhTDVvNEQ0WWVQN1VjeDNECjhMMSs4L2NHcEFIeWx0RmJac3FPYnNwZ1Z2N3Y4NlFWUzIralU4L1AxZEhjOFhVR1dtbmo2a0p2TG05TnJiUzUKdTVJcVRkMEJJdGxIaE9VMXdsOFZYWEhISHVOME1WK3RGNWM1b3dVcTlILzRDS0RsTDFGNkFtTUJWVWwrRmhibgpOMFFnbWZzSjBtb0Q2c3lYc0pmSXhZRnIvL0IvcUttVmVRcE5TREJPU2hRYmI0TUxpKy9KSWt0dU0xemlrVVV1CnBGRUJFQ096QWdNQkFBRUNnZ0VBWHNjMG4zd0l0akhxbWlTcWhFR2JmeXg3UUFwSzZqcW5MdVFudTFXaGk4eGkKamxlekxxS1FwNjlDWjBoN25zWWxDUDlmNU90SHJLejJoOWJOeCtCZ0MxRXRZN1VoQ1N3NC9FWml5VHh3ODNERwp5cDYwek5HOWVQQVNKU2tsMWluWGx5TUVWY2xVZDA1ZHN6TzZSNk9mcTkvci9iVkg4cEZPOXNEWldaMUtKanJwCk1RV0Y5UGxiTnFOU1JtcVVSU0VEeWYwWDVzQkQ1ODRSV3hqQ2l5R3NKVlJ5RVk4KysrRlZGZlU3Z2gxMGxmdjIKUUJUZmFRZGZZUFp0RVp6ZXJKUVRwM3dFR0VmZkhFbVA2MDI1eTdJZFlTMXdQZVo0R3RLeFVPQkl1S3Z3Z3BEYwpOOHdrQmdHSTlLMGNZUCsxcjlIa1RlcVFoRWFydSt3dXB0dkVab3gwcVFLQmdRRDNzN0QzenJuUFhKZXo4Z0hwCmJDamdzUnFTdjNGZTN6d1prR3NhWmhuOU42d2NlRGtkTmZXOWowdEl5MmFPY1lRVGVCVzZ5WkNCY3FxWVp2MGMKZUNVS05JMmxNOThPanQyYk1HNXZ3RTQ5aHVZZWtXekxnTlV3cnFZcm9hRnl1YU1UZVZxdDc1eFVONkNvU3Z6QQpxQjdWMXdER3dZVWhCS2YreWpkcTNRZXEzUUtCZ1FEUkM0SWVMWFN0c2hHckdHL0NzTzYrL0FBL0NnTFpzYzlPCkV2YTBrb3FZTmhrSXRCdlJZR08rWWJKcDRPMXJsTi91TnZjY2lWdXlGNDdKakJPNTVsR3BEVGpTenNFV1M0WG8KeFZXV1pvUDMxcFJaOVR1c0VKSzV2bG5vMFlxSjlQNXZnL3BRNlJ1M2ZZWG9jUGpBYUlQTTFBRXJjOFo3NzFGeQorNkJENVkyM3p3S0JnRHF1Z1ZCVDAwVkM1RlduRWJqZy9OWXVYdU5CSTNTY1lqcVVNaXR3NE50U1l4M2poWFJjCklqbWtSdXVaOUZQdXBLR1FJMlc2OXRjVCtVSmRzNzBZNFgySGNiOGZpTXFFSWcvdjYxbmlMeWI0WEhBRmQ4YkcKWUx0RnhPdzFRSEJUZGtUWXpSakQyVDlDWm5jNFBLVFByMjV0bnl0M0VUai9SMlZmTnIzRVcxcXBBb0dBYVhWcQowUnFSY0VjVERzT25MZ3JnaHN6T3V2NnI3WEw4YUNDOUFOK2t0NkVqQS9jSXlabmM5K0NGaDFDSHRleEhCQUFLCnJnVEZrNVM2M2dhaXRQZnlYbHhqUEVZOXRxZW5DSVQwNW9rVkxtUzhOcDIyMnRrSmpGYnhPTGp0TVNlOWJEaWkKZ1VyNFJwczJnTXJ0VXZQbStlQkNMcytiWkU2WlFtNmFyV1lURnBVQ2dZRUE5dDFIaERaYlBLSm1LM05IN2VjUQpjRFNiWGRwKzFuMm9Ub0I0dWlwRkh0SXlSQloyYlFxbElCd2RLamM3UHZUSzgxUzdEWHYxUW90NjBnamhqRGpxCm9RQ01DZ0wzMlRZaGtPbjJWMk8zV2xsaXltY1ZoSWxEQ0tpczNVcG9hQ1ZGbURYcS9lN3ljci9XK2FUSmpISWgKMDIrTWJpQWUram4zamxPZ1ZmeUZETWM9Ci0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0K</prv>
@@ -356,7 +481,7 @@
 		<package>
 			<name>suricata</name>
 			<website>http://suricata-ids.org/</website>
-			<descr><![CDATA[High Performance Network IDS, IPS and Security Monitoring engine by OISF.]]></descr>
+			<descr>High Performance Network IDS, IPS and Security Monitoring engine by OISF.</descr>
 			<version>6.0.13</version>
 			<configurationfile>suricata.xml</configurationfile>
 			<include_file>/usr/local/pkg/suricata/suricata.inc</include_file>
@@ -379,17 +504,17 @@
 				<enable_feodo_botnet_c2_rules>on</enable_feodo_botnet_c2_rules>
 				<enable_abuse_ssl_blacklist_rules>on</enable_abuse_ssl_blacklist_rules>
 				<enable_extra_rules>off</enable_extra_rules>
-				<extra_rules></extra_rules>
-				<snort_rules_file></snort_rules_file>
-				<oinkcode></oinkcode>
-				<etprocode></etprocode>
+				<extra_rules />
+				<snort_rules_file />
+				<oinkcode />
+				<etprocode />
 				<rm_blocked>never_b</rm_blocked>
 				<autoruleupdate>1d_up</autoruleupdate>
-				<etopen_custom_rule_url></etopen_custom_rule_url>
-				<etpro_custom_rule_url></etpro_custom_rule_url>
-				<snort_custom_url></snort_custom_url>
-				<gplv2_custom_url></gplv2_custom_url>
-				<maxmind_geoipdb_key></maxmind_geoipdb_key>
+				<etopen_custom_rule_url />
+				<etpro_custom_rule_url />
+				<snort_custom_url />
+				<gplv2_custom_url />
+				<maxmind_geoipdb_key />
 				<autoruleupdatetime>00:18</autoruleupdatetime>
 				<log_to_systemlog>off</log_to_systemlog>
 				<update_notify>off</update_notify>
@@ -409,7 +534,7 @@
 				<item>
 					<name>LAN - Enabled</name>
 					<modtime>1698692747</modtime>
-					<content></content>
+					<content />
 				</item>
 				<item>
 					<name>LAN - Drops</name>
@@ -426,7 +551,7 @@
 				<interface>lan</interface>
 				<enable>on</enable>
 				<uuid>64029</uuid>
-				<descr><![CDATA[LAN]]></descr>
+				<descr>LAN</descr>
 				<enable_verbose_logging>off</enable_verbose_logging>
 				<max_pcap_log_size>32</max_pcap_log_size>
 				<max_pcap_log_files>1000</max_pcap_log_files>
@@ -513,7 +638,7 @@
 				<eve_log_smtp_extended>on</eve_log_smtp_extended>
 				<eve_log_http_extended_headers>accept, accept-charset, accept-datetime, accept-encoding, accept-language, accept-range, age, allow, authorization, cache-control, connection, content-encoding, content-language, content-length, content-location, content-md5, content-range, content-type, cookie, date, dnt, etags, from, last-modified, link, location, max-forwards, origin, pragma, proxy-authenticate, proxy-authorization, range, referrer, refresh, retry-after, server, set-cookie, te, trailer, transfer-encoding, upgrade, vary, via, warning, www-authenticate, x-authenticated-user, x-flash-version, x-forwarded-proto, x-requested-with</eve_log_http_extended_headers>
 				<eve_log_smtp_extended_fields>bcc, received, reply-to, x-mailer, x-originating-ip</eve_log_smtp_extended_fields>
-				<eve_log_tls_extended_fields></eve_log_tls_extended_fields>
+				<eve_log_tls_extended_fields />
 				<eve_log_files_magic>off</eve_log_files_magic>
 				<eve_log_files_hash>none</eve_log_files_hash>
 				<eve_log_drop>on</eve_log_drop>
@@ -639,7 +764,7 @@
 			<name>suricata</name>
 			<rcfile>suricata.sh</rcfile>
 			<executable>suricata</executable>
-			<description><![CDATA[Suricata IDS/IPS Daemon]]></description>
+			<description>Suricata IDS/IPS Daemon</description>
 		</service>
 	</installedpackages>
 </pfsense>

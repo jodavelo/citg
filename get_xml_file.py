@@ -17,7 +17,15 @@ import time
 import subprocess
 import asyncio
 
+from dotenv import load_dotenv
+import os
+
 import logging
+
+load_dotenv()
+
+FW_USER = os.getenv('FW_USER')
+FW_PASSWORD = os.getenv('FW_PASSWORD')
 
 def create_ssh_client(server, port, user, password):
     client = paramiko.SSHClient()
@@ -36,8 +44,8 @@ def copy_from_remote(server, port, user, password, remote_path, local_path):
 # Configuration for to connect
 server = '192.168.1.1'
 port = 22
-user = 'admin'
-password = '123456789'
+user = FW_USER
+password = FW_PASSWORD
 remote_path = '/cf/conf/config.xml'
 local_path = './config.xml'
 
