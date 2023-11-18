@@ -32,6 +32,7 @@ DB_PASSWORD = os.getenv('DB_PASSWORD')
 DB_NAME = os.getenv('DB_NAME')
 FW_USER = os.getenv('FW_USER')
 FW_PASSWORD = os.getenv('FW_PASSWORD')
+API_KEY = os.getenv('API_KEY')
 
 logging.basicConfig(filename='historical_log.txt', level=logging.INFO, 
                     format='%(asctime)s %(levelname)s:%(message)s')
@@ -139,7 +140,7 @@ def pfsense_ips():
     return {ip: list(descs) for ip, descs in ips_with_desc.items()}
 
 # ------------------------------------------------------------
-# Historycal ip addresses
+# Historical ip addresses
 # ------------------------------------------------------------
 def database_ips():
     # DB config
@@ -265,7 +266,7 @@ def insert_into_malicious_ip_addresses_table(ip, description):
 # IP Reputation
 # -------------------------------------------------------
 def check_fraud_score(ip_address):
-    url = f"https://ipqualityscore.com/api/json/ip/r8gzGddTBOHUKimOW4yFGpJINdVhssR9/{ip_address}?strictness=1"
+    url = f"https://ipqualityscore.com/api/json/ip/{API_KEY}/{ip_address}?strictness=1"
     response = requests.get(url)
     
     if response.status_code == 200:
