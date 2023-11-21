@@ -1,5 +1,6 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Depends, status
 from pydantic import BaseModel
+from fastapi.middleware.cors import CORSMiddleware
 
 import re
 from ipaddress import ip_address
@@ -18,15 +19,166 @@ import asyncio
 import logging
 import subprocess
 
+from pydantic import BaseModel, EmailStr
+from passlib.context import CryptContext
+import hashlib
+import secrets
+import string
+import smtplib
+from email.mime.text import MIMEText
+
 process_enable = {}
+
+from dotenv import load_dotenv
+import os
+load_dotenv()
+
+SMTP_SERVER = "smtp.gmail.com"
+SMTP_PORT = 587  
+SMTP_USERNAME = os.getenv('GMAIL_USER') 
+SMTP_PASSWORD = os.getenv('GMAIL_APP_PASSWORD')
+DB_USER = os.getenv('DB_USER')
+DB_PASSWORD = os.getenv('DB_PASSWORD')
+DB_NAME = os.getenv('DB_NAME')
+
+def send_email(dest, password):
+    message = MIMEText(f"Your password is: {password}")
+    user_mail_fully = SMTP_USERNAME + '@gmail.com'
+    message['From'] = user_mail_fully
+    message['To'] = dest
+    message['Subject'] = "Your password account"
+
+    with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
+        server.starttls()
+        server.login(user_mail_fully, SMTP_PASSWORD)
+        server.sendmail(user_mail_fully, dest, message.as_string())
 
 app = FastAPI()
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],  # List of origins allow  (you can use ["*"] to allow all)
+    allow_credentials=True,
+    allow_methods=["*"],  # Methods enable
+    allow_headers=["*"],  # Method enable
+)
+
+class UserCreate(BaseModel):
+    email: EmailStr
+
+class LoginData(BaseModel):
+    email: EmailStr
+    password: str  
+
+
+pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+
+def hash_password_sha256(password: str):
+    return hashlib.sha256(password.encode()).hexdigest()
+
+def generate_password(longitud=20):
+    if longitud < 20:
+        raise ValueError("Minimum size of password it should be 20 characters")
+
+    characters = string.ascii_letters + string.digits + string.punctuation
+    password = ''.join(secrets.choice(characters) for _ in range(longitud))
+
+    return password
 
 
 # logging configuration
 logging.basicConfig(filename='historical_log.txt', level=logging.INFO, 
                     format='%(asctime)s %(levelname)s:%(message)s')
+
+
+def insert_users(email, hashed_password, password):
+    connection_params = {
+        'host': 'localhost',
+        'user': DB_USER,
+        'password': DB_PASSWORD,
+        'db': DB_NAME,
+        'charset': 'utf8mb4',
+        'cursorclass': pymysql.cursors.DictCursor
+    }
+
+    try:
+        connection = pymysql.connect(**connection_params)
+
+        with connection.cursor() as cursor:
+            cursor.execute("SELECT * FROM users WHERE email = %s", (email,))
+            if cursor.rowcount == 0:
+                send_email(email, password)  # Asegúrate de que esta función esté definida
+                sql = "INSERT INTO users (email, password) VALUES (%s, %s)"
+                cursor.execute(sql, (email, hashed_password))
+                connection.commit()
+                logging.info(f"User {email} added successfully!")
+                return 'success'
+            else:
+                return 'exist'
+
+    except Exception as e:
+        logging.error(f"Error while inserting user: {e}")
+        return 'error'
+    finally:
+        connection.close()
+
+def login_db(email, hashed_password):
+    connection_params = {
+        'host': 'localhost',
+        'user': DB_USER,
+        'password': DB_PASSWORD,
+        'db': DB_NAME,
+        'charset': 'utf8mb4',
+        'cursorclass': pymysql.cursors.DictCursor
+    }
+
+    try:
+        connection = pymysql.connect(**connection_params)
+
+        with connection.cursor() as cursor:
+            # Buscar el usuario por email
+            cursor.execute("SELECT password FROM users WHERE email = %s", (email,))
+            user = cursor.fetchone()
+
+            if user is None:
+                return False
+            if user['password'] == hashed_password:
+                return True
+            else:
+                return False
+
+    except Exception as e:
+        logging.error(f"Error during login: {e}")
+        return 'error'
+    finally:
+        connection.close()
+
+def get_ip_addresses(table_name):
+    connection_params = {
+        'host': 'localhost',
+        'user': DB_USER,
+        'password': DB_PASSWORD,
+        'db': DB_NAME,
+        'charset': 'utf8mb4',
+        'cursorclass': pymysql.cursors.DictCursor
+    }
+
+    try:
+        connection = pymysql.connect(**connection_params)
+
+        with connection.cursor() as cursor:
+            sql = f"SELECT ip_address, description FROM { table_name }"
+            cursor.execute(sql)
+
+            result = cursor.fetchall()
+            return result
+
+    except Exception as e:
+        logging.error(f"Error to get data from database: {e}")
+        return None
+    finally:
+        connection.close()
+
 
 
 def kill_historical_processes():
@@ -79,6 +231,42 @@ async def filter_select(option):
             return {"message": "All process has been finished succesfully"}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+@app.post("/register", status_code=status.HTTP_201_CREATED)
+async def register(user: UserCreate):
+    password = generate_password(20)
+    hashed_password = hash_password_sha256(password)
+    print(password)
+    print(hashed_password)
+    try:
+        #new_user = add_user(db, user_data)
+        user = insert_users(user.email, hashed_password, password)
+        if(user == 'success'):
+            return {"message": "User created successfully"}
+        else:
+            return {"message": "User already exists"}
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=str(e))
+
+@app.post("/login")
+async def register(user: LoginData):
+    response = login_db(user.email, user.password)
+    return {"login": response}
+    
+@app.get("/malicious-ips")
+async def get_list_of_malicious_ips():
+    result = get_ip_addresses('malicious_ip_addresses')
+    # print(result)
+    return {
+        "data": result
+    }
+
+@app.get("/positives-negatives")
+async def get_list_of_positives_negatives():
+    result = get_ip_addresses('positive_negatives')
+    return {
+        "data": result
+    }
 
 # To run, you should to execute this command in a linux terminal
 # uvicorn main:app --reload
