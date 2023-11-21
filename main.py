@@ -153,6 +153,33 @@ def login_db(email, hashed_password):
     finally:
         connection.close()
 
+def get_ip_addresses(table_name):
+    connection_params = {
+        'host': 'localhost',
+        'user': DB_USER,
+        'password': DB_PASSWORD,
+        'db': DB_NAME,
+        'charset': 'utf8mb4',
+        'cursorclass': pymysql.cursors.DictCursor
+    }
+
+    try:
+        connection = pymysql.connect(**connection_params)
+
+        with connection.cursor() as cursor:
+            sql = f"SELECT ip_address, description FROM { table_name }"
+            cursor.execute(sql)
+
+            result = cursor.fetchall()
+            return result
+
+    except Exception as e:
+        logging.error(f"Error to get data from database: {e}")
+        return None
+    finally:
+        connection.close()
+
+
 
 def kill_historical_processes():
     try:
@@ -226,6 +253,20 @@ async def register(user: LoginData):
     response = login_db(user.email, user.password)
     return {"login": response}
     
+@app.get("/malicious-ips")
+async def get_list_of_malicious_ips():
+    result = get_ip_addresses('malicious_ip_addresses')
+    # print(result)
+    return {
+        "data": result
+    }
+
+@app.get("/positives-negatives")
+async def get_list_of_positives_negatives():
+    result = get_ip_addresses('positive_negatives')
+    return {
+        "data": result
+    }
 
 # To run, you should to execute this command in a linux terminal
 # uvicorn main:app --reload
