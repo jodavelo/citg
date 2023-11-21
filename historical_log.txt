@@ -307,3 +307,4 @@
 2023-11-20 19:50:44,702 INFO:User citgtrabajogrado@gmail.com added successfully!
 2023-11-20 19:52:43,329 INFO:User citgtrabajogrado@gmail.com added successfully!
 2023-11-20 19:53:54,742 INFO:User citgtrabajogrado@gmail.com added successfully!
+2023-11-20 20:44:02,416 ERROR:Error while inserting user: 'int' object is not subscriptable

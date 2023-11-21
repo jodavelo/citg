@@ -66,6 +66,10 @@ app.add_middleware(
 class UserCreate(BaseModel):
     email: EmailStr
 
+class LoginData(BaseModel):
+    email: EmailStr
+    password: str  
+
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
@@ -114,6 +118,37 @@ def insert_users(email, hashed_password, password):
 
     except Exception as e:
         logging.error(f"Error while inserting user: {e}")
+        return 'error'
+    finally:
+        connection.close()
+
+def login_db(email, hashed_password):
+    connection_params = {
+        'host': 'localhost',
+        'user': DB_USER,
+        'password': DB_PASSWORD,
+        'db': DB_NAME,
+        'charset': 'utf8mb4',
+        'cursorclass': pymysql.cursors.DictCursor
+    }
+
+    try:
+        connection = pymysql.connect(**connection_params)
+
+        with connection.cursor() as cursor:
+            # Buscar el usuario por email
+            cursor.execute("SELECT password FROM users WHERE email = %s", (email,))
+            user = cursor.fetchone()
+
+            if user is None:
+                return False
+            if user['password'] == hashed_password:
+                return True
+            else:
+                return False
+
+    except Exception as e:
+        logging.error(f"Error during login: {e}")
         return 'error'
     finally:
         connection.close()
@@ -186,7 +221,10 @@ async def register(user: UserCreate):
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
 
-
+@app.post("/login")
+async def register(user: LoginData):
+    response = login_db(user.email, user.password)
+    return {"login": response}
     
 
 # To run, you should to execute this command in a linux terminal
