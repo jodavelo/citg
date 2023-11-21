@@ -298,3 +298,12 @@
 2023-11-18 18:46:19,887 INFO:PfSense service restarted
 2023-11-18 18:46:19,887 INFO:Service restart finished!
 2023-11-18 18:46:33,850 INFO:Script reputation.py and historical.py finished successfully!
+2023-11-20 19:02:40,458 INFO:User citgtrabajogrado@gmail.com added successfully!
+2023-11-20 19:05:52,086 INFO:User jodavelo30@gmail.com added successfully!
+2023-11-20 19:16:31,816 INFO:User josedani0630@hotmail.com added successfully!
+2023-11-20 19:19:40,042 INFO:User citgtrabajogrado@gmail.com added successfully!
+2023-11-20 19:40:31,031 INFO:User jodavelo30@gmail.com added successfully!
+2023-11-20 19:49:00,817 INFO:User citgtrabajogrado@gmail.com added successfully!
+2023-11-20 19:50:44,702 INFO:User citgtrabajogrado@gmail.com added successfully!
+2023-11-20 19:52:43,329 INFO:User citgtrabajogrado@gmail.com added successfully!
+2023-11-20 19:53:54,742 INFO:User citgtrabajogrado@gmail.com added successfully!
