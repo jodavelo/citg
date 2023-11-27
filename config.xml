@@ -464,6 +464,132 @@
             <time>1700549456</time>
             <username>admin@192.168.1.103 (Local Database)</username>
         </created>
+    </rule><rule>
+        <id />
+        <tracker>1700704290</tracker>
+        <type>block</type>
+        <interface>lan</interface>
+        <ipprotocol>inet</ipprotocol>
+        <source>
+            <address>165.232.134.49</address>
+        </source>
+        <destination>
+            <any />
+        </destination>
+        <descr>citg</descr>
+        <updated>
+            <time>1700704290</time>
+            <username>admin@192.168.1.103 (Local Database)</username>
+        </updated>
+        <created>
+            <time>1700704290</time>
+            <username>admin@192.168.1.103 (Local Database)</username>
+        </created>
+    </rule><rule>
+        <id />
+        <tracker>1700704506</tracker>
+        <type>block</type>
+        <interface>lan</interface>
+        <ipprotocol>inet</ipprotocol>
+        <source>
+            <address>127.0.0.1</address>
+        </source>
+        <destination>
+            <any />
+        </destination>
+        <descr>citg</descr>
+        <updated>
+            <time>1700704506</time>
+            <username>admin@192.168.1.103 (Local Database)</username>
+        </updated>
+        <created>
+            <time>1700704506</time>
+            <username>admin@192.168.1.103 (Local Database)</username>
+        </created>
+    </rule><rule>
+        <id />
+        <tracker>1700964747</tracker>
+        <type>block</type>
+        <interface>lan</interface>
+        <ipprotocol>inet</ipprotocol>
+        <source>
+            <address>209.54.104.100</address>
+        </source>
+        <destination>
+            <any />
+        </destination>
+        <descr>citg</descr>
+        <updated>
+            <time>1700964747</time>
+            <username>admin@192.168.1.103 (Local Database)</username>
+        </updated>
+        <created>
+            <time>1700964747</time>
+            <username>admin@192.168.1.103 (Local Database)</username>
+        </created>
+    </rule><rule>
+        <id />
+        <tracker>1700981565</tracker>
+        <type>block</type>
+        <interface>lan</interface>
+        <ipprotocol>inet</ipprotocol>
+        <source>
+            <address>209.54.104.120</address>
+        </source>
+        <destination>
+            <any />
+        </destination>
+        <descr>citg</descr>
+        <updated>
+            <time>1700981565</time>
+            <username>admin@192.168.1.103 (Local Database)</username>
+        </updated>
+        <created>
+            <time>1700981565</time>
+            <username>admin@192.168.1.103 (Local Database)</username>
+        </created>
+    </rule><rule>
+        <id />
+        <tracker>1700981705</tracker>
+        <type>block</type>
+        <interface>lan</interface>
+        <ipprotocol>inet</ipprotocol>
+        <source>
+            <address>69.39.239.161</address>
+        </source>
+        <destination>
+            <any />
+        </destination>
+        <descr>citg</descr>
+        <updated>
+            <time>1700981705</time>
+            <username>admin@192.168.1.103 (Local Database)</username>
+        </updated>
+        <created>
+            <time>1700981705</time>
+            <username>admin@192.168.1.103 (Local Database)</username>
+        </created>
+    </rule><rule>
+        <id />
+        <tracker>1700981827</tracker>
+        <type>block</type>
+        <interface>lan</interface>
+        <ipprotocol>inet</ipprotocol>
+        <source>
+            <address>69.39.250.172</address>
+        </source>
+        <destination>
+            <any />
+        </destination>
+        <descr>citg</descr>
+        <updated>
+            <time>1700981827</time>
+            <username>admin@192.168.1.103 (Local Database)</username>
+        </updated>
+        <created>
+            <time>1700981827</time>
+            <username>admin@192.168.1.103 (Local Database)</username>
+        </created>
     </rule></filter>
 	<shaper>
 	</shaper>

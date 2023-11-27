@@ -206,7 +206,7 @@ def file_manager(ips):
 # --------------------------------------------------------
 # DB - malicious table insert
 # --------------------------------------------------------
-def insert_into_malicious_ip_addresses_table(ip, description):
+def insert_into_malicious_ip_addresses_table(ip_data):
     connection_params = {
         'host': 'localhost',
         'user': DB_USER,
@@ -220,13 +220,28 @@ def insert_into_malicious_ip_addresses_table(ip, description):
         connection = pymysql.connect(**connection_params)
 
         with connection.cursor() as cursor:
-            cursor.execute("SELECT * FROM malicious_ip_addresses WHERE ip_address = %s", (ip,))
+            cursor.execute("SELECT * FROM malicious_ip_addresses WHERE ip_address = %s", (ip_data['ip_address'],))
             if cursor.rowcount == 0:
-                sql = "INSERT INTO malicious_ip_addresses (ip_address, description) VALUES (%s, %s)"
-                cursor.execute(sql, (ip, description))
+                sql = """
+                    INSERT INTO malicious_ip_addresses 
+                    (ip_address, fraud_score, country_code, ISP, host, organization, description, element_id) 
+                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+                """
+                cursor.execute(sql, (
+                    ip_data['ip_address'],
+                    ip_data['fraud_score'],
+                    ip_data['country_code'],
+                    ip_data['ISP'],
+                    ip_data['host'],
+                    ip_data['organization'],
+                    ip_data.get('description', 'No description'),
+                    ip_data['element_id']  
+                ))
                 connection.commit()
-                logging.info(f"IP {ip} added successfully from reputation script!")
+                logging.info(f"IP {ip_data['ip_address']} added successfully to malicious_ip_addresses table")
 
+    except Exception as e:
+        logging.error(f"Error while inserting IP into malicious_ip_addresses table: {e}")
     finally:
         connection.close()
 
@@ -240,9 +255,23 @@ def check_fraud_score(ip_address):
     if response.status_code == 200:
         data = response.json()
         if data['success'] and data['fraud_score'] >= 75:
-            print(f"IP {ip_address} checked!")
-        #     logging.info('IP checked!', ip_address)
-            return f'{ip_address}'
+            # print(ip_address)
+            fraud_score = data.get('fraud_score', 'No available')
+            country_code = data.get('country_code', 'No available')
+            isp = data.get('ISP', 'No available')
+            host = data.get('host', 'No available')
+            organization = data.get('organization', 'No available')
+            #logging.info('IP checked!', ip_address)
+            return {
+                    'ip_address': ip_address,
+                    'fraud_score': fraud_score,
+                    'country_code': country_code,
+                    'ISP': isp,
+                    'host': host,
+                    'organization': organization
+                }
+        else: 
+            return None
 
 def map_check_fraud_score(ips):
     high_risk_ips = []
@@ -250,6 +279,73 @@ def map_check_fraud_score(ips):
         checked_ip = check_fraud_score( ip )
         high_risk_ips.append( checked_ip )
     return high_risk_ips
+
+# -------------------------------------------------------
+# For to insert false positives
+# -------------------------------------------------------
+def insert_into_false_positives_table(ip_false_positive):
+    connection_params = {
+        'host': 'localhost',
+        'user': DB_USER,
+        'password': DB_PASSWORD,
+        'db': DB_NAME,
+        'charset': 'utf8mb4',
+        'cursorclass': pymysql.cursors.DictCursor
+    }
+
+    try:
+        connection = pymysql.connect(**connection_params)
+
+        with connection.cursor() as cursor:
+            cursor.execute("SELECT * FROM false_positives WHERE ip_address = %s", (ip_false_positive['ip_address'],))
+            if cursor.rowcount == 0:
+                sql = """
+                    INSERT INTO false_positives 
+                    (ip_address, fraud_score, country_code, ISP, host, organization) 
+                    VALUES (%s, %s, %s, %s, %s, %s)
+                """
+                cursor.execute(sql, (
+                    ip_false_positive['ip_address'],
+                    ip_false_positive['fraud_score'],
+                    ip_false_positive['country_code'],
+                    ip_false_positive['ISP'],
+                    ip_false_positive['host'],
+                    ip_false_positive['organization']
+                ))
+                connection.commit()
+                logging.info(f"IP {ip_false_positive['ip_address']} added successfully into false_positives table")
+
+    except Exception as e:
+        logging.error(f"Error while inserting IP into false_positives table: {e}")
+    finally:
+        connection.close()
+
+def check_fraud_score_false_positives(ip_address):
+    url = f"https://ipqualityscore.com/api/json/ip/{API_KEY}/{ip_address}?strictness=1"
+    response = requests.get(url)
+    
+    if response.status_code == 200:
+        data = response.json()
+        if data['success']:
+            fraud_score = data.get('fraud_score', 'No available')
+            country_code = data.get('country_code', 'No available')
+            isp = data.get('ISP', 'No available')
+            host = data.get('host', 'No available')
+            organization = data.get('organization', 'No available')
+
+            if fraud_score < 60:
+                logging.info(f'IP checked - false positive: {ip_address}')
+                return {
+                    'ip_address': ip_address,
+                    'fraud_score': fraud_score,
+                    'country_code': country_code,
+                    'ISP': isp,
+                    'host': host,
+                    'organization': organization
+                }
+            else:
+                return None
+
 
 # -------------------------------------------------------
 # Historial ip table
@@ -298,14 +394,19 @@ def main():
     ip_addresses_checked = []
     if( len(filtered_ips) > 0 ):
         for ip in filtered_ips:
-            ip_address_checked = check_fraud_score(ip)
-            if( ip_address_checked ):
-                ip_addresses_checked.append(ip_address_checked)
-                description = filtered_ips_object[ip][0] 
-                #print(ip_address_checked, description)
-                insert_into_commitment_indicators_ip_addresses_table(ip_address_checked)
-                insert_into_malicious_ip_addresses_table(ip_address_checked, description)
+            ip_address_checked_object = check_fraud_score(ip)
+            ip_false_positive_object = check_fraud_score_false_positives(ip)
+            if( ip_address_checked_object != None ):
+                ip_addresses_checked.append(ip_address_checked_object['ip_address'])
+                ip_address_checked_object['description'] = filtered_ips_object[ip_address_checked_object['ip_address']][0] 
+                ip_address_checked_object['element_id'] = 2
+                #description = filtered_ips_object[ip][0] 
+                insert_into_commitment_indicators_ip_addresses_table(ip_address_checked_object['ip_address'])
+                insert_into_malicious_ip_addresses_table(ip_address_checked_object)
+            if( ip_false_positive_object != None ):
+                insert_into_false_positives_table(ip_false_positive_object)
         if( len(ip_addresses_checked) > 0 ):
+            #print("developing")
             file_manager(ip_addresses_checked)
     while True:
         current_hash = calculate_md5(file_name)

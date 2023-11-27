@@ -603,3 +603,248 @@
 2023-11-21 01:51:52,641 INFO:PfSense service restarted
 2023-11-21 01:51:52,641 INFO:Service restart finished!
 2023-11-21 01:52:01,711 INFO:Script reputation.py and historical.py finished successfully!
+2023-11-24 00:56:00,528 INFO:Script reputation.py started
+2023-11-24 00:56:03,274 INFO:Script historical.py started
+2023-11-24 01:02:37,196 INFO:Script reputation.py started
+2023-11-24 01:02:39,539 INFO:Script historical.py started
+2023-11-24 01:03:00,392 INFO:File modified. Running historical.py
+2023-11-24 01:09:11,441 INFO:File modified. Running historical.py
+2023-11-24 01:15:47,662 INFO:File modified. Running historical.py
+2023-11-24 01:18:53,604 INFO:File modified. Running historical.py
+2023-11-24 01:19:23,728 INFO:File modified. Running historical.py
+2023-11-24 01:30:40,566 INFO:File modified. Running historical.py
+2023-11-24 01:30:41,677 INFO:IP checked: 186.82.160.199
+2023-11-24 01:32:41,789 INFO:File modified. Running historical.py
+2023-11-24 01:34:38,135 INFO:File modified. Running historical.py
+2023-11-24 01:34:39,660 INFO:IP checked: 186.82.160.199
+2023-11-24 23:46:46,595 INFO:Script historical.py started
+2023-11-24 23:47:20,099 INFO:Script historical.py started
+2023-11-24 23:47:21,981 INFO:IP checked: 186.82.160.199
+2023-11-25 00:08:33,240 INFO:File modified. Running historical.py
+2023-11-25 00:08:34,668 INFO:IP checked: 186.82.160.199
+2023-11-25 00:08:34,684 INFO:IP 186.82.160.199 added successfully into false_positives table
+2023-11-25 00:38:31,400 INFO:File modified. Running historical.py
+2023-11-25 00:39:48,236 INFO:File modified. Running historical.py
+2023-11-25 00:40:39,829 INFO:File modified. Running historical.py
+2023-11-25 01:01:12,448 INFO:File modified. Running historical.py
+2023-11-25 01:01:14,369 INFO:IP 72.167.209.94 added successfully to positive_negatives table
+2023-11-25 01:07:14,702 INFO:File modified. Running historical.py
+2023-11-25 01:08:33,110 INFO:File modified. Running historical.py
+2023-11-25 01:09:34,396 INFO:File modified. Running historical.py
+2023-11-25 01:11:05,401 INFO:File modified. Running historical.py
+2023-11-25 01:12:41,278 INFO:File modified. Running historical.py
+2023-11-25 01:13:17,329 INFO:File modified. Running historical.py
+2023-11-25 01:19:39,041 INFO:File modified. Running historical.py
+2023-11-25 01:21:00,192 INFO:File modified. Running historical.py
+2023-11-25 01:22:26,825 INFO:File modified. Running historical.py
+2023-11-25 01:24:48,604 INFO:File modified. Running historical.py
+2023-11-25 01:31:10,608 INFO:File modified. Running historical.py
+2023-11-25 01:31:17,190 INFO:IP 20.163.153.235 added successfully to positive_negatives table
+2023-11-25 01:31:17,226 INFO:IP 72.167.210.241 added successfully to positive_negatives table
+2023-11-25 01:31:17,238 INFO:IP 72.167.210.241 added successfully into commitment_indicators table
+2023-11-25 18:39:38,197 INFO:Script historical.py started
+2023-11-25 18:52:55,155 INFO:File modified. Running historical.py
+2023-11-25 18:53:20,256 INFO:File modified. Running historical.py
+2023-11-25 18:58:00,745 INFO:File modified. Running historical.py
+2023-11-25 20:10:11,528 INFO:File modified. Running historical.py
+2023-11-25 20:12:27,818 INFO:File modified. Running historical.py
+2023-11-25 20:12:29,241 INFO:IP 209.54.104.100 added successfully to positive_negatives table
+2023-11-25 20:12:29,247 INFO:IP 209.54.104.100 added successfully into commitment_indicators table
+2023-11-25 20:18:19,567 INFO:File modified. Running historical.py
+2023-11-25 20:24:56,358 INFO:File modified. Running historical.py
+2023-11-25 20:32:37,505 INFO:File modified. Running historical.py
+2023-11-25 20:35:13,862 INFO:File modified. Running historical.py
+2023-11-25 20:35:15,734 INFO:IP 209.54.104.100 added successfully to malicious_ip_addresses table
+2023-11-25 21:12:27,094 INFO:File modified. Running historical.py
+2023-11-25 21:12:27,486 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-25 21:12:27,605 INFO:Authentication (password) successful!
+2023-11-25 21:12:27,673 INFO:Copied file from PfSense!
+2023-11-25 21:12:27,678 INFO:Rules created successfully
+2023-11-25 21:12:27,691 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-25 21:12:27,781 INFO:Authentication (password) successful!
+2023-11-25 21:12:27,846 INFO:Copied file to PfSense!
+2023-11-25 21:12:27,859 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-25 21:12:27,952 INFO:Authentication (password) successful!
+2023-11-25 21:12:28,000 INFO:PfSense service restarted
+2023-11-25 21:12:28,000 INFO:Service restart finished!
+2023-11-25 21:34:56,190 INFO:Script reputation.py started
+2023-11-25 21:44:12,544 INFO:File modified. Running reputation.py
+2023-11-25 21:45:08,339 INFO:File modified. Running reputation.py
+2023-11-25 21:46:39,232 INFO:File modified. Running reputation.py
+2023-11-25 21:50:15,149 INFO:File modified. Running reputation.py
+2023-11-25 21:54:31,218 INFO:File modified. Running reputation.py
+2023-11-25 21:54:37,054 INFO:IP 209.54.104.104 added successfully into commitment_indicators table
+2023-11-25 21:54:37,059 INFO:IP 209.54.104.104 added successfully to malicious_ip_addresses table
+2023-11-26 00:54:52,342 INFO:File modified. Running reputation.py
+2023-11-26 00:54:57,039 INFO:IP checked - false positive: 1.55.39.38
+2023-11-26 00:54:58,708 INFO:IP checked - false positive: 1.55.167.233
+2023-11-26 00:54:59,481 INFO:IP checked - false positive: 1.55.209.48
+2023-11-26 00:55:00,277 INFO:IP checked - false positive: 1.55.211.227
+2023-11-26 00:55:04,383 INFO:IP checked - false positive: 186.82.160.195
+2023-11-26 00:58:39,567 INFO:File modified. Running reputation.py
+2023-11-26 00:58:44,132 INFO:IP checked - false positive: 1.55.39.38
+2023-11-26 01:00:49,519 INFO:File modified. Running reputation.py
+2023-11-26 01:00:53,973 INFO:IP checked - false positive: 1.55.39.38
+2023-11-26 01:00:53,979 INFO:IP 1.55.39.38 added successfully into false_positives table
+2023-11-26 01:00:55,595 INFO:IP checked - false positive: 1.55.167.233
+2023-11-26 01:00:55,602 INFO:IP 1.55.167.233 added successfully into false_positives table
+2023-11-26 01:00:56,378 INFO:IP checked - false positive: 1.55.209.48
+2023-11-26 01:00:56,383 INFO:IP 1.55.209.48 added successfully into false_positives table
+2023-11-26 01:00:57,168 INFO:IP checked - false positive: 1.55.211.227
+2023-11-26 01:00:57,175 INFO:IP 1.55.211.227 added successfully into false_positives table
+2023-11-26 01:01:00,520 INFO:IP checked - false positive: 186.82.160.195
+2023-11-26 01:01:00,526 INFO:IP 186.82.160.195 added successfully into false_positives table
+2023-11-26 01:15:17,195 INFO:Script historical.py started
+2023-11-26 01:15:17,459 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-26 01:15:17,547 INFO:Authentication (password) successful!
+2023-11-26 01:15:17,606 INFO:Copied file from PfSense!
+2023-11-26 01:15:17,610 INFO:Rules created successfully
+2023-11-26 01:15:17,620 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-26 01:15:17,709 INFO:Authentication (password) successful!
+2023-11-26 01:15:17,769 INFO:Copied file to PfSense!
+2023-11-26 01:15:17,780 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-26 01:15:17,866 INFO:Authentication (password) successful!
+2023-11-26 01:15:17,913 INFO:PfSense service restarted
+2023-11-26 01:15:17,913 INFO:Service restart finished!
+2023-11-26 01:15:20,708 INFO:IP 102.130.113.9 added successfully to malicious_ip_addresses table
+2023-11-26 01:15:21,275 INFO:IP 178.128.23.9 added successfully to malicious_ip_addresses table
+2023-11-26 01:15:22,272 INFO:IP 20.163.162.74 added successfully to malicious_ip_addresses table
+2023-11-26 01:15:22,833 INFO:IP 1.116.76.185 added successfully to malicious_ip_addresses table
+2023-11-26 01:15:23,369 INFO:IP 20.163.158.177 added successfully to malicious_ip_addresses table
+2023-11-26 01:15:23,771 INFO:IP 185.101.21.232 added successfully to malicious_ip_addresses table
+2023-11-26 01:15:24,507 INFO:IP 103.129.222.46 added successfully to malicious_ip_addresses table
+2023-11-26 01:15:25,042 INFO:IP 20.163.153.235 added successfully to malicious_ip_addresses table
+2023-11-26 01:15:25,932 INFO:IP checked - false positive: 186.82.160.195
+2023-11-26 01:15:25,938 INFO:IP 186.82.160.195 added successfully into false_positives table
+2023-11-26 01:50:29,657 INFO:Script historical.py started
+2023-11-26 01:50:29,935 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-26 01:50:30,046 INFO:Authentication (password) successful!
+2023-11-26 01:50:30,108 INFO:Copied file from PfSense!
+2023-11-26 01:50:30,112 INFO:Rules created successfully
+2023-11-26 01:50:30,125 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-26 01:50:30,215 INFO:Authentication (password) successful!
+2023-11-26 01:50:30,276 INFO:Copied file to PfSense!
+2023-11-26 01:50:30,287 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-26 01:50:30,376 INFO:Authentication (password) successful!
+2023-11-26 01:50:30,425 INFO:PfSense service restarted
+2023-11-26 01:50:30,425 INFO:Service restart finished!
+2023-11-26 01:50:36,458 INFO:IP checked - false positive: 186.82.160.195
+2023-11-26 01:51:21,504 INFO:File modified. Running historical.py
+2023-11-26 01:51:21,730 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-26 01:51:21,817 INFO:Authentication (password) successful!
+2023-11-26 01:51:21,879 INFO:Copied file from PfSense!
+2023-11-26 01:51:21,882 INFO:Rules created successfully
+2023-11-26 01:51:21,893 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-26 01:51:21,980 INFO:Authentication (password) successful!
+2023-11-26 01:51:22,038 INFO:Copied file to PfSense!
+2023-11-26 01:51:22,050 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-26 01:51:22,138 INFO:Authentication (password) successful!
+2023-11-26 01:51:22,185 INFO:PfSense service restarted
+2023-11-26 01:51:22,185 INFO:Service restart finished!
+2023-11-26 01:51:28,632 INFO:IP checked - false positive: 186.82.160.195
+2023-11-26 01:51:29,598 INFO:IP 209.54.104.120 added successfully to positive_negatives table
+2023-11-26 01:51:29,602 INFO:IP 209.54.104.120 added successfully into commitment_indicators table
+2023-11-26 01:52:44,662 INFO:File modified. Running historical.py
+2023-11-26 01:52:44,888 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-26 01:52:44,974 INFO:Authentication (password) successful!
+2023-11-26 01:52:45,035 INFO:Copied file from PfSense!
+2023-11-26 01:52:45,039 INFO:Rules created successfully
+2023-11-26 01:52:45,051 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-26 01:52:45,138 INFO:Authentication (password) successful!
+2023-11-26 01:52:45,197 INFO:Copied file to PfSense!
+2023-11-26 01:52:45,207 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-26 01:52:45,295 INFO:Authentication (password) successful!
+2023-11-26 01:52:45,341 INFO:PfSense service restarted
+2023-11-26 01:52:45,341 INFO:Service restart finished!
+2023-11-26 01:52:50,019 INFO:IP 209.54.104.120 added successfully to malicious_ip_addresses table
+2023-11-26 01:52:51,681 INFO:IP checked - false positive: 186.82.160.195
+2023-11-26 01:54:51,788 INFO:File modified. Running historical.py
+2023-11-26 01:54:52,046 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-26 01:54:52,135 INFO:Authentication (password) successful!
+2023-11-26 01:54:52,198 INFO:Copied file from PfSense!
+2023-11-26 01:54:52,201 INFO:Rules created successfully
+2023-11-26 01:54:52,212 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-26 01:54:52,300 INFO:Authentication (password) successful!
+2023-11-26 01:54:52,359 INFO:Copied file to PfSense!
+2023-11-26 01:54:52,370 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-26 01:54:52,458 INFO:Authentication (password) successful!
+2023-11-26 01:54:52,509 INFO:PfSense service restarted
+2023-11-26 01:54:52,509 INFO:Service restart finished!
+2023-11-26 01:54:58,940 INFO:IP checked - false positive: 186.82.160.195
+2023-11-26 01:54:59,848 INFO:IP 69.39.239.161 added successfully to positive_negatives table
+2023-11-26 01:54:59,853 INFO:IP 69.39.239.161 added successfully into commitment_indicators table
+2023-11-26 01:55:04,858 INFO:File modified. Running historical.py
+2023-11-26 01:55:05,285 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-26 01:55:05,376 INFO:Authentication (password) successful!
+2023-11-26 01:55:05,435 INFO:Copied file from PfSense!
+2023-11-26 01:55:05,469 INFO:Rules created successfully
+2023-11-26 01:55:05,481 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-26 01:55:05,569 INFO:Authentication (password) successful!
+2023-11-26 01:55:05,631 INFO:Copied file to PfSense!
+2023-11-26 01:55:05,641 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-26 01:55:05,729 INFO:Authentication (password) successful!
+2023-11-26 01:55:05,778 INFO:PfSense service restarted
+2023-11-26 01:55:05,778 INFO:Service restart finished!
+2023-11-26 01:55:09,556 INFO:IP 69.39.239.161 added successfully to malicious_ip_addresses table
+2023-11-26 01:55:12,348 INFO:IP checked - false positive: 186.82.160.195
+2023-11-26 01:56:57,438 INFO:File modified. Running historical.py
+2023-11-26 01:56:57,698 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-26 01:56:57,786 INFO:Authentication (password) successful!
+2023-11-26 01:56:57,852 INFO:Copied file from PfSense!
+2023-11-26 01:56:57,856 INFO:Rules created successfully
+2023-11-26 01:56:57,867 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-26 01:56:57,953 INFO:Authentication (password) successful!
+2023-11-26 01:56:58,012 INFO:Copied file to PfSense!
+2023-11-26 01:56:58,023 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-26 01:56:58,110 INFO:Authentication (password) successful!
+2023-11-26 01:56:58,158 INFO:PfSense service restarted
+2023-11-26 01:56:58,158 INFO:Service restart finished!
+2023-11-26 01:57:05,376 INFO:IP checked - false positive: 186.82.160.195
+2023-11-26 01:57:06,952 INFO:IP 69.39.250.172 added successfully to positive_negatives table
+2023-11-26 01:57:06,956 INFO:IP 69.39.250.172 added successfully into commitment_indicators table
+2023-11-26 01:57:06,956 INFO:File modified. Running historical.py
+2023-11-26 01:57:07,374 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-26 01:57:07,460 INFO:Authentication (password) successful!
+2023-11-26 01:57:07,529 INFO:Copied file from PfSense!
+2023-11-26 01:57:07,534 INFO:Rule created 69.39.250.172
+2023-11-26 01:57:07,536 INFO:Rules created successfully
+2023-11-26 01:57:07,548 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-26 01:57:07,635 INFO:Authentication (password) successful!
+2023-11-26 01:57:07,697 INFO:Copied file to PfSense!
+2023-11-26 01:57:07,708 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-26 01:57:07,797 INFO:Authentication (password) successful!
+2023-11-26 01:57:07,846 INFO:PfSense service restarted
+2023-11-26 01:57:07,846 INFO:Service restart finished!
+2023-11-26 01:57:10,921 INFO:IP 69.39.250.172 added successfully to malicious_ip_addresses table
+2023-11-26 01:57:15,000 INFO:IP checked - false positive: 186.82.160.195
+2023-11-26 23:19:58,878 INFO:Script historical.py started
+2023-11-26 23:22:46,225 INFO:Script reputation.py and historical.py finished successfully!
+2023-11-26 23:23:16,064 INFO:Script historical.py started
+2023-11-26 23:23:24,208 INFO:IP checked - false positive: 186.82.160.195
+2023-11-26 23:23:25,274 INFO:IP 1.117.84.242 added successfully to positive_negatives table
+2023-11-26 23:23:25,285 INFO:IP 1.117.84.242 added successfully into commitment_indicators table
+2023-11-26 23:23:45,300 INFO:File modified. Running historical.py
+2023-11-26 23:23:53,373 INFO:IP checked - false positive: 186.82.160.195
+2023-11-26 23:26:28,521 INFO:File modified. Running historical.py
+2023-11-26 23:26:32,977 INFO:IP 1.117.84.242 added successfully to malicious_ip_addresses table
+2023-11-26 23:26:36,819 INFO:IP checked - false positive: 186.82.160.195
+2023-11-26 23:38:39,879 INFO:Script reputation.py started
+2023-11-26 23:38:44,610 INFO:IP checked - false positive: 1.55.39.38
+2023-11-26 23:38:44,617 INFO:IP 1.55.39.38 added successfully into false_positives table
+2023-11-26 23:38:46,387 INFO:IP checked - false positive: 1.55.167.233
+2023-11-26 23:38:46,393 INFO:IP 1.55.167.233 added successfully into false_positives table
+2023-11-26 23:38:47,180 INFO:IP checked - false positive: 1.55.209.48
+2023-11-26 23:38:47,185 INFO:IP 1.55.209.48 added successfully into false_positives table
+2023-11-26 23:38:47,967 INFO:IP checked - false positive: 1.55.211.227
+2023-11-26 23:38:47,973 INFO:IP 1.55.211.227 added successfully into false_positives table
+2023-11-26 23:38:51,211 INFO:IP checked - false positive: 186.82.160.195
+2023-11-26 23:40:39,892 INFO:Script reputation.py started
+2023-11-26 23:40:44,364 INFO:IP checked - false positive: 1.55.39.38
+2023-11-26 23:40:46,043 INFO:IP checked - false positive: 1.55.167.233
+2023-11-26 23:40:46,864 INFO:IP checked - false positive: 1.55.209.48
+2023-11-26 23:40:47,683 INFO:IP checked - false positive: 1.55.211.227
+2023-11-26 23:40:50,958 INFO:IP checked - false positive: 186.82.160.195
+2023-11-26 23:40:55,400 INFO:IP 1.117.91.178 added successfully into commitment_indicators table
+2023-11-26 23:40:55,408 INFO:IP 1.117.91.178 added successfully to malicious_ip_addresses table
+2023-11-26 23:41:32,505 INFO:Script reputation.py and historical.py finished successfully!
+2023-11-27 00:53:45,759 INFO:Script historical.py started
