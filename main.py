@@ -331,6 +331,60 @@ async def get_attacks_by_day():
     finally:
         connection.close()
 
+def get_db_connection():
+    return pymysql.connect(
+        host='localhost',
+        user=DB_USER,
+        password=DB_PASSWORD,
+        db=DB_NAME,
+        charset='utf8mb4',
+        cursorclass=pymysql.cursors.DictCursor
+    )
+
+@app.get("/true_positives_count/")
+async def get_true_positives_count():
+    try:
+        connection = get_db_connection()
+        with connection.cursor() as cursor:
+            cursor.execute("SELECT COUNT(*) AS count FROM malicious_ip_addresses")
+            result = cursor.fetchone()
+            return result
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+    finally:
+        connection.close()
+
+@app.get("/false_positives_count/")
+async def get_false_positives_count():
+    try:
+        connection = get_db_connection()
+        with connection.cursor() as cursor:
+            cursor.execute("SELECT COUNT(*) AS count FROM false_positives")
+            result = cursor.fetchone()
+            return result
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+    finally:
+        connection.close()
+
+@app.get("/attacks_by_detection_type/")
+async def get_attacks_by_detection_type():
+    try:
+        connection = get_db_connection()
+        with connection.cursor() as cursor:
+            cursor.execute("""
+                SELECT e.description, COUNT(*) AS count
+                FROM malicious_ip_addresses m
+                INNER JOIN elements e ON m.element_id = e.id
+                GROUP BY e.description
+            """)
+            result = cursor.fetchall()
+            return result
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+    finally:
+        connection.close()
+
 # To run, you should to execute this command in a linux terminal
 # uvicorn main:app --reload
 
