@@ -224,8 +224,8 @@ def insert_into_malicious_ip_addresses_table(ip_data):
             if cursor.rowcount == 0:
                 sql = """
                     INSERT INTO malicious_ip_addresses 
-                    (ip_address, fraud_score, country_code, ISP, host, organization, description) 
-                    VALUES (%s, %s, %s, %s, %s, %s, %s)
+                    (ip_address, fraud_score, country_code, ISP, host, organization, description, element_id) 
+                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
                 """
                 cursor.execute(sql, (
                     ip_data['ip_address'],
@@ -234,7 +234,8 @@ def insert_into_malicious_ip_addresses_table(ip_data):
                     ip_data['ISP'],
                     ip_data['host'],
                     ip_data['organization'],
-                    ip_data.get('description', 'No description')  
+                    ip_data.get('description', 'No description'),
+                    ip_data['element_id']  
                 ))
                 connection.commit()
                 logging.info(f"IP {ip_data['ip_address']} added successfully to malicious_ip_addresses table")
@@ -398,13 +399,14 @@ def main():
             if( ip_address_checked_object != None ):
                 ip_addresses_checked.append(ip_address_checked_object['ip_address'])
                 ip_address_checked_object['description'] = filtered_ips_object[ip_address_checked_object['ip_address']][0] 
+                ip_address_checked_object['element_id'] = 2
                 #description = filtered_ips_object[ip][0] 
                 insert_into_commitment_indicators_ip_addresses_table(ip_address_checked_object['ip_address'])
                 insert_into_malicious_ip_addresses_table(ip_address_checked_object)
             if( ip_false_positive_object != None ):
                 insert_into_false_positives_table(ip_false_positive_object)
         if( len(ip_addresses_checked) > 0 ):
-            # print("developing")
+            #print("developing")
             file_manager(ip_addresses_checked)
     while True:
         current_hash = calculate_md5(file_name)

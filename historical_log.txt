@@ -817,3 +817,33 @@
 2023-11-26 01:57:07,846 INFO:Service restart finished!
 2023-11-26 01:57:10,921 INFO:IP 69.39.250.172 added successfully to malicious_ip_addresses table
 2023-11-26 01:57:15,000 INFO:IP checked - false positive: 186.82.160.195
+2023-11-26 23:19:58,878 INFO:Script historical.py started
+2023-11-26 23:22:46,225 INFO:Script reputation.py and historical.py finished successfully!
+2023-11-26 23:23:16,064 INFO:Script historical.py started
+2023-11-26 23:23:24,208 INFO:IP checked - false positive: 186.82.160.195
+2023-11-26 23:23:25,274 INFO:IP 1.117.84.242 added successfully to positive_negatives table
+2023-11-26 23:23:25,285 INFO:IP 1.117.84.242 added successfully into commitment_indicators table
+2023-11-26 23:23:45,300 INFO:File modified. Running historical.py
+2023-11-26 23:23:53,373 INFO:IP checked - false positive: 186.82.160.195
+2023-11-26 23:26:28,521 INFO:File modified. Running historical.py
+2023-11-26 23:26:32,977 INFO:IP 1.117.84.242 added successfully to malicious_ip_addresses table
+2023-11-26 23:26:36,819 INFO:IP checked - false positive: 186.82.160.195
+2023-11-26 23:38:39,879 INFO:Script reputation.py started
+2023-11-26 23:38:44,610 INFO:IP checked - false positive: 1.55.39.38
+2023-11-26 23:38:44,617 INFO:IP 1.55.39.38 added successfully into false_positives table
+2023-11-26 23:38:46,387 INFO:IP checked - false positive: 1.55.167.233
+2023-11-26 23:38:46,393 INFO:IP 1.55.167.233 added successfully into false_positives table
+2023-11-26 23:38:47,180 INFO:IP checked - false positive: 1.55.209.48
+2023-11-26 23:38:47,185 INFO:IP 1.55.209.48 added successfully into false_positives table
+2023-11-26 23:38:47,967 INFO:IP checked - false positive: 1.55.211.227
+2023-11-26 23:38:47,973 INFO:IP 1.55.211.227 added successfully into false_positives table
+2023-11-26 23:38:51,211 INFO:IP checked - false positive: 186.82.160.195
+2023-11-26 23:40:39,892 INFO:Script reputation.py started
+2023-11-26 23:40:44,364 INFO:IP checked - false positive: 1.55.39.38
+2023-11-26 23:40:46,043 INFO:IP checked - false positive: 1.55.167.233
+2023-11-26 23:40:46,864 INFO:IP checked - false positive: 1.55.209.48
+2023-11-26 23:40:47,683 INFO:IP checked - false positive: 1.55.211.227
+2023-11-26 23:40:50,958 INFO:IP checked - false positive: 186.82.160.195
+2023-11-26 23:40:55,400 INFO:IP 1.117.91.178 added successfully into commitment_indicators table
+2023-11-26 23:40:55,408 INFO:IP 1.117.91.178 added successfully to malicious_ip_addresses table
+2023-11-26 23:41:32,505 INFO:Script reputation.py and historical.py finished successfully!

@@ -255,8 +255,8 @@ def insert_into_malicious_ip_addresses_table(ip_data):
             if cursor.rowcount == 0:
                 sql = """
                     INSERT INTO malicious_ip_addresses 
-                    (ip_address, fraud_score, country_code, ISP, host, organization, description) 
-                    VALUES (%s, %s, %s, %s, %s, %s, %s)
+                    (ip_address, fraud_score, country_code, ISP, host, organization, description, element_id) 
+                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
                 """
                 cursor.execute(sql, (
                     ip_data['ip_address'],
@@ -265,7 +265,8 @@ def insert_into_malicious_ip_addresses_table(ip_data):
                     ip_data['ISP'],
                     ip_data['host'],
                     ip_data['organization'],
-                    ip_data.get('description', 'No description')  
+                    ip_data.get('description', 'No description'),
+                    ip_data['element_id'], 
                 ))
                 connection.commit()
                 logging.info(f"IP {ip_data['ip_address']} added successfully to malicious_ip_addresses table")
@@ -502,6 +503,7 @@ def main():
                 score = check_fraud_score( ip )
                 if score != None:
                     score['description'] = filtered_ips_object[ip][0]
+                    score['element_id'] = 1
                     #description = filtered_ips_object[ip][0]  
                     insert_into_malicious_ip_addresses_table(score)
         for ip_filtered in filtered_ips:

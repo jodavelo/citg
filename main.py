@@ -385,6 +385,19 @@ async def get_attacks_by_detection_type():
     finally:
         connection.close()
 
+@app.get("/soar_blocks_count/")
+async def get_soar_blocks_count():
+    try:
+        connection = get_db_connection()
+        with connection.cursor() as cursor:
+            cursor.execute("SELECT COUNT(*) AS count FROM malicious_ip_addresses")
+            result = cursor.fetchone()
+            return result
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+    finally:
+        connection.close()
+
 # To run, you should to execute this command in a linux terminal
 # uvicorn main:app --reload
 
