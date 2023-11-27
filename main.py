@@ -268,6 +268,69 @@ async def get_list_of_positives_negatives():
         "data": result
     }
 
+#----------------------------------------------
+# By type of attacks - BAR CHART
+#----------------------------------------------
+@app.get("/attack_summary/")
+async def get_attack_summary():
+    connection_params = {
+        'host': 'localhost',
+        'user': DB_USER,
+        'password': DB_PASSWORD,
+        'db': DB_NAME,
+        'charset': 'utf8mb4',
+        'cursorclass': pymysql.cursors.DictCursor
+    }
+
+    try:
+        connection = pymysql.connect(**connection_params)
+
+        with connection.cursor() as cursor:
+            cursor.execute("""
+                SELECT description, COUNT(*) AS count
+                FROM malicious_ip_addresses
+                GROUP BY description
+            """)
+            result = cursor.fetchall()
+            return result
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+    finally:
+        connection.close()
+
+#----------------------------------------------
+# Attacks by day - Line chart
+#----------------------------------------------
+@app.get("/attacks_by_day/")
+async def get_attacks_by_day():
+    connection_params = {
+        'host': 'localhost',
+        'user': DB_USER,
+        'password': DB_PASSWORD,
+        'db': DB_NAME,
+        'charset': 'utf8mb4',
+        'cursorclass': pymysql.cursors.DictCursor
+    }
+
+    try:
+        connection = pymysql.connect(**connection_params)
+
+        with connection.cursor() as cursor:
+            cursor.execute("""
+                SELECT description, DATE(detected_at) as attack_day, COUNT(*) AS count
+                FROM malicious_ip_addresses
+                GROUP BY description, DATE(detected_at)
+                ORDER BY attack_day
+            """)
+            result = cursor.fetchall()
+            return result
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+    finally:
+        connection.close()
+
 # To run, you should to execute this command in a linux terminal
 # uvicorn main:app --reload
 
