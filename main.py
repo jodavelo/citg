@@ -27,6 +27,8 @@ import string
 import smtplib
 from email.mime.text import MIMEText
 
+import pycountry
+
 process_enable = {}
 
 from dotenv import load_dotenv
@@ -395,6 +397,83 @@ async def get_soar_blocks_count():
             return result
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+    finally:
+        connection.close()
+
+@app.get("/attacks_by_country/")
+async def get_attacks_by_country():
+    try:
+        connection = get_db_connection()
+        with connection.cursor() as cursor:
+            cursor.execute("""
+                SELECT country_code, COUNT(*) AS count
+                FROM malicious_ip_addresses
+                GROUP BY country_code
+            """)
+            result = cursor.fetchall()
+            return result
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+    finally:
+        connection.close()
+
+@app.get("/attacks/")
+async def get_attacks(page: int = 1, page_size: int = 10):
+    offset = (page - 1) * page_size
+    try:
+        connection = get_db_connection()
+        with connection.cursor() as cursor:
+            cursor.execute("""
+                SELECT ip_address, description, fraud_score, country_code, ISP, host
+                FROM malicious_ip_addresses
+                ORDER BY id DESC
+                LIMIT %s OFFSET %s
+            """, (page_size, offset))
+            result = cursor.fetchall()
+            for row in result:
+                country = pycountry.countries.get(alpha_2=row['country_code'])
+                row['country_name'] = country.name if country else row['country_code']
+            return result
+    finally:
+        connection.close()
+
+@app.get("/positive-negatives/")
+async def get_positive_negatives(page: int = 1, page_size: int = 10):
+    offset = (page - 1) * page_size
+    try:
+        connection = get_db_connection()
+        with connection.cursor() as cursor:
+            cursor.execute("""
+                SELECT ip_address, description, fraud_score, country_code, ISP, host, organization
+                FROM positive_negatives
+                ORDER BY id DESC
+                LIMIT %s OFFSET %s
+            """, (page_size, offset))
+            result = cursor.fetchall()
+            for row in result:
+                country = pycountry.countries.get(alpha_2=row['country_code'])
+                row['country_name'] = country.name if country else row['country_code']
+            return result
+    finally:
+        connection.close()
+
+@app.get("/false-positives/")
+async def get_false_positives(page: int = 1, page_size: int = 10):
+    offset = (page - 1) * page_size
+    try:
+        connection = get_db_connection()
+        with connection.cursor() as cursor:
+            cursor.execute("""
+                SELECT fraud_score, country_code, ISP, host, organization, ip_address
+                FROM false_positives
+                ORDER BY id DESC
+                LIMIT %s OFFSET %s
+            """, (page_size, offset))
+            result = cursor.fetchall()
+            for row in result:
+                country = pycountry.countries.get(alpha_2=row['country_code'])
+                row['country_name'] = country.name if country else row['country_code']
+            return result
     finally:
         connection.close()
 

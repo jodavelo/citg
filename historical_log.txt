@@ -847,3 +847,4 @@
 2023-11-26 23:40:55,400 INFO:IP 1.117.91.178 added successfully into commitment_indicators table
 2023-11-26 23:40:55,408 INFO:IP 1.117.91.178 added successfully to malicious_ip_addresses table
 2023-11-26 23:41:32,505 INFO:Script reputation.py and historical.py finished successfully!
+2023-11-27 00:53:45,759 INFO:Script historical.py started
