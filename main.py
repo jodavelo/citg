@@ -424,7 +424,7 @@ async def get_attacks(page: int = 1, page_size: int = 10):
         connection = get_db_connection()
         with connection.cursor() as cursor:
             cursor.execute("""
-                SELECT ip_address, description, fraud_score, country_code, ISP, host
+                SELECT ip_address, description, fraud_score, country_code, ISP, host, detected_at
                 FROM malicious_ip_addresses
                 ORDER BY id DESC
                 LIMIT %s OFFSET %s
