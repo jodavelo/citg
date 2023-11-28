@@ -424,7 +424,7 @@ async def get_attacks(page: int = 1, page_size: int = 10):
         connection = get_db_connection()
         with connection.cursor() as cursor:
             cursor.execute("""
-                SELECT ip_address, description, fraud_score, country_code, ISP, host
+                SELECT ip_address, description, fraud_score, country_code, ISP, host, detected_at
                 FROM malicious_ip_addresses
                 ORDER BY id DESC
                 LIMIT %s OFFSET %s
@@ -476,6 +476,14 @@ async def get_false_positives(page: int = 1, page_size: int = 10):
             return result
     finally:
         connection.close()
+
+@app.on_event("startup")
+async def startup_event():
+    kill_historical_processes()
+    kill_reputation_processes()
+    process_enable['historical'] = await asyncio.create_subprocess_exec('python3', 'historical.py')
+    print("Script historical.py started successfully!")
+    logging.info("Script historical.py started successfully!")
 
 # To run, you should to execute this command in a linux terminal
 # uvicorn main:app --reload
