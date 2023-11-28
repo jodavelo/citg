@@ -477,6 +477,14 @@ async def get_false_positives(page: int = 1, page_size: int = 10):
     finally:
         connection.close()
 
+@app.on_event("startup")
+async def startup_event():
+    kill_historical_processes()
+    kill_reputation_processes()
+    process_enable['historical'] = await asyncio.create_subprocess_exec('python3', 'historical.py')
+    print("Script historical.py started successfully!")
+    logging.info("Script historical.py started successfully!")
+
 # To run, you should to execute this command in a linux terminal
 # uvicorn main:app --reload
 
