@@ -24,6 +24,7 @@ import sys
 
 from dotenv import load_dotenv
 import os
+import time
 
 load_dotenv()
 
@@ -485,6 +486,7 @@ def calculate_md5(file_name):
     return hash_md5.hexdigest()
 
 def main():
+    start_time = time.time()
     file_name = "syslog.log.txt"
     previous_hash = calculate_md5(file_name)
     filtered_ips_object = pfsense_ips()
@@ -531,6 +533,9 @@ def main():
                         ip_object['description'] = description
                         insert_into_positive_negatives_ip_addresses_table(ip_object)
                         insert_into_commitment_indicators_ip_addresses_table(ip_object['ip_address'])
+    end_time = time.time()  
+    duration = end_time - start_time  
+    print(f"Time execution: {duration} seconds")
     while True:
         current_hash = calculate_md5(file_name)
         if current_hash != previous_hash:

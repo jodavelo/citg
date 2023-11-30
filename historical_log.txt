@@ -853,3 +853,16 @@
 2023-11-28 14:10:45,357 INFO:Script historical.py started successfully!
 2023-11-28 14:11:14,664 INFO:Script reputation.py started
 2023-11-28 14:11:17,139 INFO:Script reputation.py and historical.py finished successfully!
+2023-11-29 20:36:21,463 INFO:Script historical.py started successfully!
+2023-11-29 21:39:36,986 INFO:Script historical.py started successfully!
+2023-11-29 21:39:37,597 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-29 21:39:37,754 INFO:Authentication (password) successful!
+2023-11-29 21:39:37,828 INFO:Copied file from PfSense!
+2023-11-29 21:39:37,836 INFO:Rules created successfully
+2023-11-29 21:39:37,848 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-29 21:39:37,943 INFO:Authentication (password) successful!
+2023-11-29 21:39:38,004 INFO:Copied file to PfSense!
+2023-11-29 21:39:38,015 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-11-29 21:39:38,107 INFO:Authentication (password) successful!
+2023-11-29 21:39:38,155 INFO:PfSense service restarted
+2023-11-29 21:39:38,156 INFO:Service restart finished!
