@@ -303,6 +303,22 @@ def check_fraud_score(ip_address):
                     'host': host,
                     'organization': organization
                 }
+        elif data['success'] and data['fraud_score'] < 60:
+            # print(ip_address)
+            fraud_score = data.get('fraud_score', 'No available')
+            country_code = data.get('country_code', 'No available')
+            isp = data.get('ISP', 'No available')
+            host = data.get('host', 'No available')
+            organization = data.get('organization', 'No available')
+            #logging.info('IP checked!', ip_address)
+            return {
+                    'ip_address': ip_address,
+                    'fraud_score': fraud_score,
+                    'country_code': country_code,
+                    'ISP': isp,
+                    'host': host,
+                    'organization': organization
+                }
         else: 
             return None
 
@@ -487,7 +503,7 @@ def calculate_md5(file_name):
 
 def main():
     start_time = time.time()
-    file_name = "syslog.log.txt"
+    file_name = "/var/log/syslog"
     previous_hash = calculate_md5(file_name)
     filtered_ips_object = pfsense_ips()
     filtered_ips = list(filtered_ips_object.keys())
