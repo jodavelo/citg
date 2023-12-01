@@ -120,7 +120,7 @@ def is_ip_in_range(ip, start, end):
 
 # Pfsense file path
 def pfsense_ips():
-    file_path = "syslog.log.txt"
+    file_path = "/var/log/syslog"
     ip_regex = r"\b(?:\d{1,3}\.){3}\d{1,3}\b"
     desc_regex = r"\[Classification: ([^\]]+)\]"  
 
@@ -487,7 +487,7 @@ def calculate_md5(file_name):
 
 def main():
     start_time = time.time()
-    file_name = "syslog.log.txt"
+    file_name = "/var/log/syslog"
     previous_hash = calculate_md5(file_name)
     filtered_ips_object = pfsense_ips()
     filtered_ips = list(filtered_ips_object.keys())
