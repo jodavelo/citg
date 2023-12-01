@@ -518,6 +518,7 @@ def main():
                     ip_of_quality['description'] = description
                     insert_into_positive_negatives_ip_addresses_table(ip_of_quality)
                     insert_into_commitment_indicators_ip_addresses_table(ip)
+                    print("false positives and table indicators of compromise")
                     print( ip_of_quality )
                 if ip_false_positive != None:
                     insert_into_false_positives_table(ip_false_positive)

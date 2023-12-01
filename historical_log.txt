@@ -879,3 +879,6 @@
 2023-11-30 21:32:05,403 INFO:IP checked - false positive: 186.82.160.195
 2023-11-30 21:32:06,256 INFO:IP 1.117.219.243 added successfully to positive_negatives table
 2023-11-30 21:32:06,267 INFO:IP 1.117.219.243 added successfully into commitment_indicators table
+2023-11-30 21:34:26,326 INFO:Script historical.py started successfully!
+2023-11-30 21:34:33,601 INFO:IP 1.117.219.243 added successfully to malicious_ip_addresses table
+2023-11-30 21:34:36,648 INFO:IP checked - false positive: 186.82.160.195
