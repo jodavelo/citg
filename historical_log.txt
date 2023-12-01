@@ -867,3 +867,15 @@
 2023-11-29 21:39:38,155 INFO:PfSense service restarted
 2023-11-29 21:39:38,156 INFO:Service restart finished!
 2023-11-29 21:39:53,802 INFO:IP checked - false positive: 186.82.160.195
+2023-11-30 21:18:38,212 INFO:Script historical.py started successfully!
+2023-11-30 21:28:11,135 INFO:Script historical.py started successfully!
+2023-11-30 21:28:20,527 INFO:IP checked - false positive: 186.82.160.195
+2023-11-30 21:29:35,599 INFO:File modified. Running historical.py
+2023-11-30 21:29:43,948 INFO:IP checked - false positive: 186.82.160.195
+2023-11-30 21:29:45,108 INFO:IP 1.117.201.233 added successfully to positive_negatives table
+2023-11-30 21:29:45,121 INFO:IP 1.117.201.233 added successfully into commitment_indicators table
+2023-11-30 21:31:55,255 INFO:File modified. Running historical.py
+2023-11-30 21:31:58,954 INFO:IP 1.117.201.233 added successfully to malicious_ip_addresses table
+2023-11-30 21:32:05,403 INFO:IP checked - false positive: 186.82.160.195
+2023-11-30 21:32:06,256 INFO:IP 1.117.219.243 added successfully to positive_negatives table
+2023-11-30 21:32:06,267 INFO:IP 1.117.219.243 added successfully into commitment_indicators table

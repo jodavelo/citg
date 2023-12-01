@@ -499,7 +499,7 @@ def main():
         print("db")
         print(list(malicious_ips_db))
         #change_xml_file('./config.xml', malicious_ips_db)
-        file_manager(list(malicious_ips_db))
+        #file_manager(list(malicious_ips_db))
         for ip in malicious_ips_db:
             if ip in filtered_ips_object:
                 score = check_fraud_score( ip )
@@ -518,6 +518,7 @@ def main():
                     ip_of_quality['description'] = description
                     insert_into_positive_negatives_ip_addresses_table(ip_of_quality)
                     insert_into_commitment_indicators_ip_addresses_table(ip)
+                    print( ip_of_quality )
                 if ip_false_positive != None:
                     insert_into_false_positives_table(ip_false_positive)
     if( len(malicious_ips_db) < 1 ):
