@@ -120,7 +120,7 @@ def is_ip_in_range(ip, start, end):
 
 # Pfsense file path
 def pfsense_ips():
-    file_path = "/var/log/syslog"
+    file_path = "syslog.log.txt"
     ip_regex = r"\b(?:\d{1,3}\.){3}\d{1,3}\b"
     desc_regex = r"\[Classification: ([^\]]+)\]"  
 
@@ -487,7 +487,7 @@ def calculate_md5(file_name):
 
 def main():
     start_time = time.time()
-    file_name = "/var/log/syslog"
+    file_name = "syslog.log.txt"
     previous_hash = calculate_md5(file_name)
     filtered_ips_object = pfsense_ips()
     filtered_ips = list(filtered_ips_object.keys())
@@ -516,13 +516,14 @@ def main():
                     ip = ip_of_quality['ip_address']
                     description = filtered_ips_object[ip][0]  
                     ip_of_quality['description'] = description
-                    #insert_into_positive_negatives_ip_addresses_table(ip_of_quality)
-                    #insert_into_commitment_indicators_ip_addresses_table(ip)
-                    print("false positives and table indicators of compromise")
-                    print( ip_of_quality )
-                    print(filtered_ips_object)
+                    if( ip_of_quality['fraud_score']  > 75 ):
+                        insert_into_positive_negatives_ip_addresses_table(ip_of_quality)
+                        insert_into_commitment_indicators_ip_addresses_table(ip)
+                    else:
+                        insert_into_false_positives_table(ip_of_quality)
+                        #print(ip_of_quality)
+                    #print(filtered_ips_object)
                 # if ip_false_positive != None:
-                #     insert_into_false_positives_table(ip_false_positive)
     if( len(malicious_ips_db) < 1 ):
         # ips = get_ip_addresses_db('positive_negatives')
         print("reputation")

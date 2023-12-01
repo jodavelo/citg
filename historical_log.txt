@@ -894,3 +894,19 @@
 2023-11-30 22:32:56,270 INFO:Script historical.py started successfully!
 2023-11-30 22:33:26,161 INFO:Script historical.py started successfully!
 2023-11-30 22:35:52,184 INFO:Script historical.py started successfully!
+2023-11-30 22:36:44,295 INFO:Script historical.py started successfully!
+2023-11-30 22:37:50,025 INFO:Script historical.py started successfully!
+2023-11-30 22:37:53,238 INFO:IP 1.55.211.227 added successfully to malicious_ip_addresses table
+2023-11-30 22:37:54,640 INFO:IP 1.55.209.48 added successfully to malicious_ip_addresses table
+2023-11-30 22:37:56,016 INFO:IP 1.55.39.38 added successfully to malicious_ip_addresses table
+2023-11-30 22:37:57,367 INFO:IP 1.55.167.233 added successfully to malicious_ip_addresses table
+2023-11-30 22:40:28,071 INFO:Script historical.py started successfully!
+2023-11-30 22:42:09,838 INFO:Script historical.py started successfully!
+2023-11-30 22:42:19,776 INFO:IP 154.12.117.134 added successfully to positive_negatives table
+2023-11-30 22:42:19,790 INFO:IP 154.12.117.134 added successfully into commitment_indicators table
+2023-11-30 22:42:33,808 INFO:File modified. Running historical.py
+2023-11-30 22:42:43,017 INFO:IP 154.12.117.134 added successfully to malicious_ip_addresses table
+2023-11-30 22:47:05,773 INFO:File modified. Running historical.py
+2023-11-30 22:47:53,107 INFO:Script historical.py started successfully!
+2023-11-30 22:48:04,987 INFO:IP 200.3.147.27 added successfully into false_positives table
+2023-11-30 22:48:24,959 INFO:Script historical.py started successfully!
