@@ -120,7 +120,7 @@ def is_ip_in_range(ip, start, end):
 
 # Pfsense file path
 def pfsense_ips():
-    file_path = "syslog.log.txt"
+    file_path = "/var/log/syslog"
     ip_regex = r"\b(?:\d{1,3}\.){3}\d{1,3}\b"
     desc_regex = r"\[Classification: ([^\]]+)\]"  
 
