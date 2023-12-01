@@ -562,7 +562,7 @@ def main():
             subprocess.run(["python3", "historical.py"])
             previous_hash = current_hash
 
-        time.sleep(5)  
+        time.sleep(2)  
 
     #print('Hello, world!')
 
