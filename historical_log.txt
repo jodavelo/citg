@@ -882,3 +882,6 @@
 2023-11-30 21:34:26,326 INFO:Script historical.py started successfully!
 2023-11-30 21:34:33,601 INFO:IP 1.117.219.243 added successfully to malicious_ip_addresses table
 2023-11-30 21:34:36,648 INFO:IP checked - false positive: 186.82.160.195
+2023-11-30 21:35:49,717 INFO:Script historical.py started successfully!
+2023-11-30 21:35:59,699 INFO:IP checked - false positive: 186.82.160.195
+2023-11-30 21:38:49,819 INFO:Script historical.py started successfully!
