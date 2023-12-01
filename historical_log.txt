@@ -885,3 +885,12 @@
 2023-11-30 21:35:49,717 INFO:Script historical.py started successfully!
 2023-11-30 21:35:59,699 INFO:IP checked - false positive: 186.82.160.195
 2023-11-30 21:38:49,819 INFO:Script historical.py started successfully!
+2023-11-30 22:30:21,997 INFO:Script historical.py started successfully!
+2023-11-30 22:30:24,061 INFO:IP 127.0.0.1 added successfully to malicious_ip_addresses table
+2023-11-30 22:31:06,258 INFO:File modified. Running historical.py
+2023-11-30 22:31:27,503 INFO:File modified. Running historical.py
+2023-11-30 22:31:37,115 INFO:Script historical.py started successfully!
+2023-11-30 22:32:45,097 INFO:File modified. Running historical.py
+2023-11-30 22:32:56,270 INFO:Script historical.py started successfully!
+2023-11-30 22:33:26,161 INFO:Script historical.py started successfully!
+2023-11-30 22:35:52,184 INFO:Script historical.py started successfully!

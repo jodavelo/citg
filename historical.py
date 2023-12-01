@@ -287,40 +287,24 @@ def check_fraud_score(ip_address):
     
     if response.status_code == 200:
         data = response.json()
-        if data['success'] and data['fraud_score'] >= 75:
-            # print(ip_address)
-            fraud_score = data.get('fraud_score', 'No available')
-            country_code = data.get('country_code', 'No available')
-            isp = data.get('ISP', 'No available')
-            host = data.get('host', 'No available')
-            organization = data.get('organization', 'No available')
-            #logging.info('IP checked!', ip_address)
-            return {
-                    'ip_address': ip_address,
-                    'fraud_score': fraud_score,
-                    'country_code': country_code,
-                    'ISP': isp,
-                    'host': host,
-                    'organization': organization
-                }
-        elif data['success'] and data['fraud_score'] < 60:
-            # print(ip_address)
-            fraud_score = data.get('fraud_score', 'No available')
-            country_code = data.get('country_code', 'No available')
-            isp = data.get('ISP', 'No available')
-            host = data.get('host', 'No available')
-            organization = data.get('organization', 'No available')
-            #logging.info('IP checked!', ip_address)
-            return {
-                    'ip_address': ip_address,
-                    'fraud_score': fraud_score,
-                    'country_code': country_code,
-                    'ISP': isp,
-                    'host': host,
-                    'organization': organization
-                }
-        else: 
-            return None
+        # print(ip_address)
+        fraud_score = data.get('fraud_score', 'No available')
+        country_code = data.get('country_code', 'No available')
+        isp = data.get('ISP', 'No available')
+        host = data.get('host', 'No available')
+        organization = data.get('organization', 'No available')
+        #logging.info('IP checked!', ip_address)
+        return {
+                'ip_address': ip_address,
+                'fraud_score': fraud_score,
+                'country_code': country_code,
+                'ISP': isp,
+                'host': host,
+                'organization': organization
+            }
+
+    else: 
+        return None
 
 def check_fraud_score_false_positives(ip_address):
     url = f"https://ipqualityscore.com/api/json/ip/{API_KEY}/{ip_address}?strictness=1"
@@ -515,7 +499,7 @@ def main():
         print("db")
         print(list(malicious_ips_db))
         #change_xml_file('./config.xml', malicious_ips_db)
-        file_manager(list(malicious_ips_db))
+        #file_manager(list(malicious_ips_db))
         for ip in malicious_ips_db:
             if ip in filtered_ips_object:
                 score = check_fraud_score( ip )
@@ -527,17 +511,18 @@ def main():
         for ip_filtered in filtered_ips:
             if ip_filtered not in ips_db:
                 ip_of_quality = check_fraud_score(ip_filtered)
-                ip_false_positive = check_fraud_score_false_positives(ip_filtered)
+                #ip_false_positive = check_fraud_score_false_positives(ip_filtered)
                 if ip_of_quality != None:
                     ip = ip_of_quality['ip_address']
                     description = filtered_ips_object[ip][0]  
                     ip_of_quality['description'] = description
-                    insert_into_positive_negatives_ip_addresses_table(ip_of_quality)
-                    insert_into_commitment_indicators_ip_addresses_table(ip)
+                    #insert_into_positive_negatives_ip_addresses_table(ip_of_quality)
+                    #insert_into_commitment_indicators_ip_addresses_table(ip)
                     print("false positives and table indicators of compromise")
                     print( ip_of_quality )
-                if ip_false_positive != None:
-                    insert_into_false_positives_table(ip_false_positive)
+                    print(filtered_ips_object)
+                # if ip_false_positive != None:
+                #     insert_into_false_positives_table(ip_false_positive)
     if( len(malicious_ips_db) < 1 ):
         # ips = get_ip_addresses_db('positive_negatives')
         print("reputation")
