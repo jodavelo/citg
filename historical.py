@@ -516,7 +516,12 @@ def main():
                     ip = ip_of_quality['ip_address']
                     description = filtered_ips_object[ip][0]  
                     ip_of_quality['description'] = description
-                    if( ip_of_quality['fraud_score']  > 75 ):
+                    print( ip_of_quality )
+                    try:
+                        fraud_score = int(ip_of_quality['fraud_score'])
+                    except ValueError:
+                        fraud_score = 0
+                    if fraud_score > 75:
                         insert_into_positive_negatives_ip_addresses_table(ip_of_quality)
                         insert_into_commitment_indicators_ip_addresses_table(ip)
                     else:
