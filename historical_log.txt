@@ -913,3 +913,28 @@
 2023-11-30 22:55:35,326 INFO:Script historical.py started successfully!
 2023-11-30 22:55:52,338 INFO:File modified. Running historical.py
 2023-11-30 23:08:00,084 INFO:Script historical.py started successfully!
+2023-12-02 20:34:09,361 INFO:Script historical.py started successfully!
+2023-12-02 20:34:09,894 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-12-02 20:34:09,988 INFO:Authentication (password) successful!
+2023-12-02 20:34:10,054 INFO:Copied file from PfSense!
+2023-12-02 20:34:10,063 INFO:Rules created successfully
+2023-12-02 20:34:10,077 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-12-02 20:34:10,169 INFO:Authentication (password) successful!
+2023-12-02 20:34:10,237 INFO:Copied file to PfSense!
+2023-12-02 20:34:10,249 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-12-02 20:34:10,341 INFO:Authentication (password) successful!
+2023-12-02 20:34:10,389 INFO:PfSense service restarted
+2023-12-02 20:34:10,389 INFO:Service restart finished!
+2023-12-02 20:35:20,665 INFO:File modified. Running historical.py
+2023-12-02 20:35:21,316 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-12-02 20:35:21,418 INFO:Authentication (password) successful!
+2023-12-02 20:35:21,489 INFO:Copied file from PfSense!
+2023-12-02 20:35:21,508 INFO:Rules created successfully
+2023-12-02 20:35:21,521 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-12-02 20:35:21,616 INFO:Authentication (password) successful!
+2023-12-02 20:35:21,680 INFO:Copied file to PfSense!
+2023-12-02 20:35:21,692 INFO:Connected (version 2.0, client OpenSSH_9.3)
+2023-12-02 20:35:21,787 INFO:Authentication (password) successful!
+2023-12-02 20:35:21,838 INFO:PfSense service restarted
+2023-12-02 20:35:21,838 INFO:Service restart finished!
+2023-12-02 20:35:28,818 INFO:IP 1.0.171.2 added successfully to malicious_ip_addresses table

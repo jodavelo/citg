@@ -499,7 +499,7 @@ def main():
         print("db")
         print(list(malicious_ips_db))
         #change_xml_file('./config.xml', malicious_ips_db)
-        #file_manager(list(malicious_ips_db))
+        file_manager(list(malicious_ips_db))
         for ip in malicious_ips_db:
             if ip in filtered_ips_object:
                 score = check_fraud_score( ip )
