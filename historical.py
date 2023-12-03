@@ -112,6 +112,26 @@ def change_xml_file(path, array_ips):
         file.write(new_xml_string)
         logging.info('Rules created successfully')
 
+def change_xml_file_1_ip(path, ip_address):
+    with open(path, 'r') as file:
+        xml_string = file.read()
+
+    root = ET.fromstring(xml_string)
+
+    filter_tag = root.find('.//filter')
+
+    existing_rules = filter_tag.findall('.//rule')
+
+    if not rule_exists(existing_rules, ip_address):
+        new_rule = ET.fromstring(create_rule_xml_string(ip_address, 'citg'))
+        print('Rule created for', ip_address)
+        filter_tag.append(new_rule)
+        new_xml_string = ET.tostring(root, encoding='unicode')
+
+        with open(path, 'w') as file:
+            file.write(new_xml_string)
+            logging.info('Rule created successfully for ' + ip_address)
+
 # ------------------------------------------------------------
 # Proccessing IPs addresses of syslog - General
 # ------------------------------------------------------------
@@ -230,6 +250,26 @@ def file_manager(ips):
     copy_to_remote(server, port, user, password, local_path, remote_path)
     restart_pfsense_service()
     print('file manager finished!')
+
+def file_manager_1_ip(ip):
+    # Configuration for to connect
+    server = '192.168.1.1'
+    port = 22
+    user = FW_USER
+    password = FW_PASSWORD
+    remote_path = '/cf/conf/config.xml'
+    local_path = './config.xml'
+
+    # Copy from remote server
+    copy_from_remote(server, port, user, password, remote_path, local_path)
+
+    # Modify file
+    change_xml_file_1_ip('./config.xml', ip)
+
+    # Copy to remote server
+    copy_to_remote(server, port, user, password, local_path, remote_path)
+    restart_pfsense_service()
+    print('file manager 1 ip finished!')
 
 # --------------------------------------------------------
 # Suricata Syslog and DB
@@ -499,7 +539,7 @@ def main():
         print("db")
         print(list(malicious_ips_db))
         #change_xml_file('./config.xml', malicious_ips_db)
-        file_manager(list(malicious_ips_db))
+        ##file_manager(list(malicious_ips_db)) dont forget
         for ip in malicious_ips_db:
             if ip in filtered_ips_object:
                 score = check_fraud_score( ip )
@@ -516,14 +556,16 @@ def main():
                     ip = ip_of_quality['ip_address']
                     description = filtered_ips_object[ip][0]  
                     ip_of_quality['description'] = description
-                    print( ip_of_quality )
+                    print("ip not in db", ip)
                     try:
                         fraud_score = int(ip_of_quality['fraud_score'])
                     except ValueError:
                         fraud_score = 0
                     if fraud_score > 75:
+                        print("Checked! ", ip)
                         insert_into_positive_negatives_ip_addresses_table(ip_of_quality)
                         insert_into_commitment_indicators_ip_addresses_table(ip)
+                        file_manager_1_ip( ip )
                     else:
                         insert_into_false_positives_table(ip_of_quality)
                         #print(ip_of_quality)
@@ -540,6 +582,7 @@ def main():
                         #print(ip_object['ip_address'])
                         description = filtered_ips_object[ip_object['ip_address']][0]  
                         ip_object['description'] = description
+
                         insert_into_positive_negatives_ip_addresses_table(ip_object)
                         insert_into_commitment_indicators_ip_addresses_table(ip_object['ip_address'])
     end_time = time.time()  

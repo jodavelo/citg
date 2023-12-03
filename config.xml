@@ -744,6 +744,27 @@
             <time>1701567321</time>
             <username>admin@192.168.1.103 (Local Database)</username>
         </created>
+    </rule><rule>
+        <id />
+        <tracker>1701571898</tracker>
+        <type>block</type>
+        <interface>lan</interface>
+        <ipprotocol>inet</ipprotocol>
+        <source>
+            <address>125.92.140.244</address>
+        </source>
+        <destination>
+            <any />
+        </destination>
+        <descr>citg</descr>
+        <updated>
+            <time>1701571898</time>
+            <username>admin@192.168.1.103 (Local Database)</username>
+        </updated>
+        <created>
+            <time>1701571898</time>
+            <username>admin@192.168.1.103 (Local Database)</username>
+        </created>
     </rule></filter>
 	<shaper />
 	<ipsec>
