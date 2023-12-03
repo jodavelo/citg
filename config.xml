@@ -162,101 +162,318 @@
 		</rule>
 		<rule>
 			<id />
-			<tracker>1698864368</tracker>
+			<tracker>1700349811</tracker>
 			<type>block</type>
 			<interface>lan</interface>
 			<ipprotocol>inet</ipprotocol>
-			<tag />
-			<tagged />
-			<max />
-			<max-src-nodes />
-			<max-src-conn />
-			<max-src-states />
-			<statetimeout />
-			<statetype>keep state</statetype>
-			<os />
 			<source>
-				<address>200.200.200.200</address>
+				<address>1.55.207.104</address>
 			</source>
 			<destination>
 				<any />
 			</destination>
-			<descr>daniel</descr>
+			<descr>citg</descr>
 			<updated>
-				<time>1698864368</time>
+				<time>1700349811</time>
 				<username>admin@192.168.1.103 (Local Database)</username>
 			</updated>
 			<created>
-				<time>1698864368</time>
+				<time>1700349811</time>
 				<username>admin@192.168.1.103 (Local Database)</username>
 			</created>
 		</rule>
+		<rule>
+			<id />
+			<tracker>1700350048</tracker>
+			<type>block</type>
+			<interface>lan</interface>
+			<ipprotocol>inet</ipprotocol>
+			<source>
+				<address>1.55.209.48</address>
+			</source>
+			<destination>
+				<any />
+			</destination>
+			<descr>citg</descr>
+			<updated>
+				<time>1700350048</time>
+				<username>admin@192.168.1.103 (Local Database)</username>
+			</updated>
+			<created>
+				<time>1700350048</time>
+				<username>admin@192.168.1.103 (Local Database)</username>
+			</created>
+		</rule>
+		<rule>
+			<id />
+			<tracker>1700350960</tracker>
+			<type>block</type>
+			<interface>lan</interface>
+			<ipprotocol>inet</ipprotocol>
+			<source>
+				<address>1.55.211.227</address>
+			</source>
+			<destination>
+				<any />
+			</destination>
+			<descr>citg</descr>
+			<updated>
+				<time>1700350960</time>
+				<username>admin@192.168.1.103 (Local Database)</username>
+			</updated>
+			<created>
+				<time>1700350960</time>
+				<username>admin@192.168.1.103 (Local Database)</username>
+			</created>
+		</rule>
+		<rule>
+			<id />
+			<tracker>1700549147</tracker>
+			<type>block</type>
+			<interface>lan</interface>
+			<ipprotocol>inet</ipprotocol>
+			<source>
+				<address>20.163.153.235</address>
+			</source>
+			<destination>
+				<any />
+			</destination>
+			<descr>citg</descr>
+			<updated>
+				<time>1700549147</time>
+				<username>admin@192.168.1.103 (Local Database)</username>
+			</updated>
+			<created>
+				<time>1700549147</time>
+				<username>admin@192.168.1.103 (Local Database)</username>
+			</created>
+		</rule>
+		<rule>
+			<id />
+			<tracker>1700549440</tracker>
+			<type>block</type>
+			<interface>lan</interface>
+			<ipprotocol>inet</ipprotocol>
+			<source>
+				<address>20.163.158.177</address>
+			</source>
+			<destination>
+				<any />
+			</destination>
+			<descr>citg</descr>
+			<updated>
+				<time>1700549440</time>
+				<username>admin@192.168.1.103 (Local Database)</username>
+			</updated>
+			<created>
+				<time>1700549440</time>
+				<username>admin@192.168.1.103 (Local Database)</username>
+			</created>
+		</rule>
+		<rule>
+			<id />
+			<tracker>1700704290</tracker>
+			<type>block</type>
+			<interface>lan</interface>
+			<ipprotocol>inet</ipprotocol>
+			<source>
+				<address>165.232.134.49</address>
+			</source>
+			<destination>
+				<any />
+			</destination>
+			<descr>citg</descr>
+			<updated>
+				<time>1700704290</time>
+				<username>admin@192.168.1.103 (Local Database)</username>
+			</updated>
+			<created>
+				<time>1700704290</time>
+				<username>admin@192.168.1.103 (Local Database)</username>
+			</created>
+		</rule>
+		<rule>
+			<id />
+			<tracker>1700704506</tracker>
+			<type>block</type>
+			<interface>lan</interface>
+			<ipprotocol>inet</ipprotocol>
+			<source>
+				<address>127.0.0.1</address>
+			</source>
+			<destination>
+				<any />
+			</destination>
+			<descr>citg</descr>
+			<updated>
+				<time>1700704506</time>
+				<username>admin@192.168.1.103 (Local Database)</username>
+			</updated>
+			<created>
+				<time>1700704506</time>
+				<username>admin@192.168.1.103 (Local Database)</username>
+			</created>
+		</rule>
+		<rule>
+			<id />
+			<tracker>1700964747</tracker>
+			<type>block</type>
+			<interface>lan</interface>
+			<ipprotocol>inet</ipprotocol>
+			<source>
+				<address>209.54.104.100</address>
+			</source>
+			<destination>
+				<any />
+			</destination>
+			<descr>citg</descr>
+			<updated>
+				<time>1700964747</time>
+				<username>admin@192.168.1.103 (Local Database)</username>
+			</updated>
+			<created>
+				<time>1700964747</time>
+				<username>admin@192.168.1.103 (Local Database)</username>
+			</created>
+		</rule>
+		<rule>
+			<id />
+			<tracker>1700981565</tracker>
+			<type>block</type>
+			<interface>lan</interface>
+			<ipprotocol>inet</ipprotocol>
+			<source>
+				<address>209.54.104.120</address>
+			</source>
+			<destination>
+				<any />
+			</destination>
+			<descr>citg</descr>
+			<updated>
+				<time>1700981565</time>
+				<username>admin@192.168.1.103 (Local Database)</username>
+			</updated>
+			<created>
+				<time>1700981565</time>
+				<username>admin@192.168.1.103 (Local Database)</username>
+			</created>
+		</rule>
+		<rule>
+			<id />
+			<tracker>1700981705</tracker>
+			<type>block</type>
+			<interface>lan</interface>
+			<ipprotocol>inet</ipprotocol>
+			<source>
+				<address>69.39.239.161</address>
+			</source>
+			<destination>
+				<any />
+			</destination>
+			<descr>citg</descr>
+			<updated>
+				<time>1700981705</time>
+				<username>admin@192.168.1.103 (Local Database)</username>
+			</updated>
+			<created>
+				<time>1700981705</time>
+				<username>admin@192.168.1.103 (Local Database)</username>
+			</created>
+		</rule>
+		<rule>
+			<id />
+			<tracker>1700981827</tracker>
+			<type>block</type>
+			<interface>lan</interface>
+			<ipprotocol>inet</ipprotocol>
+			<source>
+				<address>69.39.250.172</address>
+			</source>
+			<destination>
+				<any />
+			</destination>
+			<descr>citg</descr>
+			<updated>
+				<time>1700981827</time>
+				<username>admin@192.168.1.103 (Local Database)</username>
+			</updated>
+			<created>
+				<time>1700981827</time>
+				<username>admin@192.168.1.103 (Local Database)</username>
+			</created>
+		</rule>
+		<rule>
+			<id />
+			<tracker>1701311977</tracker>
+			<type>block</type>
+			<interface>lan</interface>
+			<ipprotocol>inet</ipprotocol>
+			<source>
+				<address>1.117.84.242</address>
+			</source>
+			<destination>
+				<any />
+			</destination>
+			<descr>citg</descr>
+			<updated>
+				<time>1701311977</time>
+				<username>admin@192.168.1.103 (Local Database)</username>
+			</updated>
+			<created>
+				<time>1701311977</time>
+				<username>admin@192.168.1.103 (Local Database)</username>
+			</created>
+		</rule>
+		<rule>
+			<id />
+			<tracker>1701567141</tracker>
+			<type>block</type>
+			<interface>lan</interface>
+			<ipprotocol>inet</ipprotocol>
+			<source>
+				<address>127.0.1.1</address>
+			</source>
+			<destination>
+				<any />
+			</destination>
+			<descr>citg</descr>
+			<updated>
+				<time>1701567141</time>
+				<username>admin@192.168.1.103 (Local Database)</username>
+			</updated>
+			<created>
+				<time>1701567141</time>
+				<username>admin@192.168.1.103 (Local Database)</username>
+			</created>
+		</rule>
+		<rule>
+			<id />
+			<tracker>1701567147</tracker>
+			<type>block</type>
+			<interface>lan</interface>
+			<ipprotocol>inet</ipprotocol>
+			<source>
+				<address>91.189.91.157</address>
+			</source>
+			<destination>
+				<any />
+			</destination>
+			<descr>citg</descr>
+			<updated>
+				<time>1701567147</time>
+				<username>admin@192.168.1.103 (Local Database)</username>
+			</updated>
+			<created>
+				<time>1701567147</time>
+				<username>admin@192.168.1.103 (Local Database)</username>
+			</created>
+		</rule>
+		<separator>
+			<lan />
+		</separator>
 	<rule>
         <id />
-        <tracker>1700322867</tracker>
-        <type>block</type>
-        <interface>lan</interface>
-        <ipprotocol>inet</ipprotocol>
-        <source>
-            <address>102.130.113.9</address>
-        </source>
-        <destination>
-            <any />
-        </destination>
-        <descr>citg</descr>
-        <updated>
-            <time>1700322867</time>
-            <username>admin@192.168.1.103 (Local Database)</username>
-        </updated>
-        <created>
-            <time>1700322867</time>
-            <username>admin@192.168.1.103 (Local Database)</username>
-        </created>
-    </rule><rule>
-        <id />
-        <tracker>1700322867</tracker>
-        <type>block</type>
-        <interface>lan</interface>
-        <ipprotocol>inet</ipprotocol>
-        <source>
-            <address>185.101.21.232</address>
-        </source>
-        <destination>
-            <any />
-        </destination>
-        <descr>citg</descr>
-        <updated>
-            <time>1700322867</time>
-            <username>admin@192.168.1.103 (Local Database)</username>
-        </updated>
-        <created>
-            <time>1700322867</time>
-            <username>admin@192.168.1.103 (Local Database)</username>
-        </created>
-    </rule><rule>
-        <id />
-        <tracker>1700322867</tracker>
-        <type>block</type>
-        <interface>lan</interface>
-        <ipprotocol>inet</ipprotocol>
-        <source>
-            <address>103.129.222.46</address>
-        </source>
-        <destination>
-            <any />
-        </destination>
-        <descr>citg</descr>
-        <updated>
-            <time>1700322867</time>
-            <username>admin@192.168.1.103 (Local Database)</username>
-        </updated>
-        <created>
-            <time>1700322867</time>
-            <username>admin@192.168.1.103 (Local Database)</username>
-        </created>
-    </rule><rule>
-        <id />
-        <tracker>1700322867</tracker>
+        <tracker>1701567250</tracker>
         <type>block</type>
         <interface>lan</interface>
         <ipprotocol>inet</ipprotocol>
@@ -268,352 +485,37 @@
         </destination>
         <descr>citg</descr>
         <updated>
-            <time>1700322867</time>
+            <time>1701567250</time>
             <username>admin@192.168.1.103 (Local Database)</username>
         </updated>
         <created>
-            <time>1700322867</time>
+            <time>1701567250</time>
             <username>admin@192.168.1.103 (Local Database)</username>
         </created>
     </rule><rule>
         <id />
-        <tracker>1700322867</tracker>
+        <tracker>1701567250</tracker>
         <type>block</type>
         <interface>lan</interface>
         <ipprotocol>inet</ipprotocol>
         <source>
-            <address>1.116.76.185</address>
+            <address>103.129.222.46</address>
         </source>
         <destination>
             <any />
         </destination>
         <descr>citg</descr>
         <updated>
-            <time>1700322867</time>
+            <time>1701567250</time>
             <username>admin@192.168.1.103 (Local Database)</username>
         </updated>
         <created>
-            <time>1700322867</time>
+            <time>1701567250</time>
             <username>admin@192.168.1.103 (Local Database)</username>
         </created>
     </rule><rule>
         <id />
-        <tracker>1700322867</tracker>
-        <type>block</type>
-        <interface>lan</interface>
-        <ipprotocol>inet</ipprotocol>
-        <source>
-            <address>178.128.23.9</address>
-        </source>
-        <destination>
-            <any />
-        </destination>
-        <descr>citg</descr>
-        <updated>
-            <time>1700322867</time>
-            <username>admin@192.168.1.103 (Local Database)</username>
-        </updated>
-        <created>
-            <time>1700322867</time>
-            <username>admin@192.168.1.103 (Local Database)</username>
-        </created>
-    </rule><rule>
-        <id />
-        <tracker>1700346379</tracker>
-        <type>block</type>
-        <interface>lan</interface>
-        <ipprotocol>inet</ipprotocol>
-        <source>
-            <address>1.55.167.233</address>
-        </source>
-        <destination>
-            <any />
-        </destination>
-        <descr>citg</descr>
-        <updated>
-            <time>1700346379</time>
-            <username>admin@192.168.1.103 (Local Database)</username>
-        </updated>
-        <created>
-            <time>1700346379</time>
-            <username>admin@192.168.1.103 (Local Database)</username>
-        </created>
-    </rule><rule>
-        <id />
-        <tracker>1700349811</tracker>
-        <type>block</type>
-        <interface>lan</interface>
-        <ipprotocol>inet</ipprotocol>
-        <source>
-            <address>1.55.207.104</address>
-        </source>
-        <destination>
-            <any />
-        </destination>
-        <descr>citg</descr>
-        <updated>
-            <time>1700349811</time>
-            <username>admin@192.168.1.103 (Local Database)</username>
-        </updated>
-        <created>
-            <time>1700349811</time>
-            <username>admin@192.168.1.103 (Local Database)</username>
-        </created>
-    </rule><rule>
-        <id />
-        <tracker>1700350048</tracker>
-        <type>block</type>
-        <interface>lan</interface>
-        <ipprotocol>inet</ipprotocol>
-        <source>
-            <address>1.55.209.48</address>
-        </source>
-        <destination>
-            <any />
-        </destination>
-        <descr>citg</descr>
-        <updated>
-            <time>1700350048</time>
-            <username>admin@192.168.1.103 (Local Database)</username>
-        </updated>
-        <created>
-            <time>1700350048</time>
-            <username>admin@192.168.1.103 (Local Database)</username>
-        </created>
-    </rule><rule>
-        <id />
-        <tracker>1700350960</tracker>
-        <type>block</type>
-        <interface>lan</interface>
-        <ipprotocol>inet</ipprotocol>
-        <source>
-            <address>1.55.211.227</address>
-        </source>
-        <destination>
-            <any />
-        </destination>
-        <descr>citg</descr>
-        <updated>
-            <time>1700350960</time>
-            <username>admin@192.168.1.103 (Local Database)</username>
-        </updated>
-        <created>
-            <time>1700350960</time>
-            <username>admin@192.168.1.103 (Local Database)</username>
-        </created>
-    </rule><rule>
-        <id />
-        <tracker>1700549147</tracker>
-        <type>block</type>
-        <interface>lan</interface>
-        <ipprotocol>inet</ipprotocol>
-        <source>
-            <address>20.163.153.235</address>
-        </source>
-        <destination>
-            <any />
-        </destination>
-        <descr>citg</descr>
-        <updated>
-            <time>1700549147</time>
-            <username>admin@192.168.1.103 (Local Database)</username>
-        </updated>
-        <created>
-            <time>1700549147</time>
-            <username>admin@192.168.1.103 (Local Database)</username>
-        </created>
-    </rule><rule>
-        <id />
-        <tracker>1700549440</tracker>
-        <type>block</type>
-        <interface>lan</interface>
-        <ipprotocol>inet</ipprotocol>
-        <source>
-            <address>20.163.158.177</address>
-        </source>
-        <destination>
-            <any />
-        </destination>
-        <descr>citg</descr>
-        <updated>
-            <time>1700549440</time>
-            <username>admin@192.168.1.103 (Local Database)</username>
-        </updated>
-        <created>
-            <time>1700549440</time>
-            <username>admin@192.168.1.103 (Local Database)</username>
-        </created>
-    </rule><rule>
-        <id />
-        <tracker>1700549456</tracker>
-        <type>block</type>
-        <interface>lan</interface>
-        <ipprotocol>inet</ipprotocol>
-        <source>
-            <address>20.163.162.74</address>
-        </source>
-        <destination>
-            <any />
-        </destination>
-        <descr>citg</descr>
-        <updated>
-            <time>1700549456</time>
-            <username>admin@192.168.1.103 (Local Database)</username>
-        </updated>
-        <created>
-            <time>1700549456</time>
-            <username>admin@192.168.1.103 (Local Database)</username>
-        </created>
-    </rule><rule>
-        <id />
-        <tracker>1700704290</tracker>
-        <type>block</type>
-        <interface>lan</interface>
-        <ipprotocol>inet</ipprotocol>
-        <source>
-            <address>165.232.134.49</address>
-        </source>
-        <destination>
-            <any />
-        </destination>
-        <descr>citg</descr>
-        <updated>
-            <time>1700704290</time>
-            <username>admin@192.168.1.103 (Local Database)</username>
-        </updated>
-        <created>
-            <time>1700704290</time>
-            <username>admin@192.168.1.103 (Local Database)</username>
-        </created>
-    </rule><rule>
-        <id />
-        <tracker>1700704506</tracker>
-        <type>block</type>
-        <interface>lan</interface>
-        <ipprotocol>inet</ipprotocol>
-        <source>
-            <address>127.0.0.1</address>
-        </source>
-        <destination>
-            <any />
-        </destination>
-        <descr>citg</descr>
-        <updated>
-            <time>1700704506</time>
-            <username>admin@192.168.1.103 (Local Database)</username>
-        </updated>
-        <created>
-            <time>1700704506</time>
-            <username>admin@192.168.1.103 (Local Database)</username>
-        </created>
-    </rule><rule>
-        <id />
-        <tracker>1700964747</tracker>
-        <type>block</type>
-        <interface>lan</interface>
-        <ipprotocol>inet</ipprotocol>
-        <source>
-            <address>209.54.104.100</address>
-        </source>
-        <destination>
-            <any />
-        </destination>
-        <descr>citg</descr>
-        <updated>
-            <time>1700964747</time>
-            <username>admin@192.168.1.103 (Local Database)</username>
-        </updated>
-        <created>
-            <time>1700964747</time>
-            <username>admin@192.168.1.103 (Local Database)</username>
-        </created>
-    </rule><rule>
-        <id />
-        <tracker>1700981565</tracker>
-        <type>block</type>
-        <interface>lan</interface>
-        <ipprotocol>inet</ipprotocol>
-        <source>
-            <address>209.54.104.120</address>
-        </source>
-        <destination>
-            <any />
-        </destination>
-        <descr>citg</descr>
-        <updated>
-            <time>1700981565</time>
-            <username>admin@192.168.1.103 (Local Database)</username>
-        </updated>
-        <created>
-            <time>1700981565</time>
-            <username>admin@192.168.1.103 (Local Database)</username>
-        </created>
-    </rule><rule>
-        <id />
-        <tracker>1700981705</tracker>
-        <type>block</type>
-        <interface>lan</interface>
-        <ipprotocol>inet</ipprotocol>
-        <source>
-            <address>69.39.239.161</address>
-        </source>
-        <destination>
-            <any />
-        </destination>
-        <descr>citg</descr>
-        <updated>
-            <time>1700981705</time>
-            <username>admin@192.168.1.103 (Local Database)</username>
-        </updated>
-        <created>
-            <time>1700981705</time>
-            <username>admin@192.168.1.103 (Local Database)</username>
-        </created>
-    </rule><rule>
-        <id />
-        <tracker>1700981827</tracker>
-        <type>block</type>
-        <interface>lan</interface>
-        <ipprotocol>inet</ipprotocol>
-        <source>
-            <address>69.39.250.172</address>
-        </source>
-        <destination>
-            <any />
-        </destination>
-        <descr>citg</descr>
-        <updated>
-            <time>1700981827</time>
-            <username>admin@192.168.1.103 (Local Database)</username>
-        </updated>
-        <created>
-            <time>1700981827</time>
-            <username>admin@192.168.1.103 (Local Database)</username>
-        </created>
-    </rule><rule>
-        <id />
-        <tracker>1701311977</tracker>
-        <type>block</type>
-        <interface>lan</interface>
-        <ipprotocol>inet</ipprotocol>
-        <source>
-            <address>1.117.84.242</address>
-        </source>
-        <destination>
-            <any />
-        </destination>
-        <descr>citg</descr>
-        <updated>
-            <time>1701311977</time>
-            <username>admin@192.168.1.103 (Local Database)</username>
-        </updated>
-        <created>
-            <time>1701311977</time>
-            <username>admin@192.168.1.103 (Local Database)</username>
-        </created>
-    </rule><rule>
-        <id />
-        <tracker>1701311977</tracker>
+        <tracker>1701567250</tracker>
         <type>block</type>
         <interface>lan</interface>
         <ipprotocol>inet</ipprotocol>
@@ -625,16 +527,225 @@
         </destination>
         <descr>citg</descr>
         <updated>
-            <time>1701311977</time>
+            <time>1701567250</time>
             <username>admin@192.168.1.103 (Local Database)</username>
         </updated>
         <created>
-            <time>1701311977</time>
+            <time>1701567250</time>
+            <username>admin@192.168.1.103 (Local Database)</username>
+        </created>
+    </rule><rule>
+        <id />
+        <tracker>1701567250</tracker>
+        <type>block</type>
+        <interface>lan</interface>
+        <ipprotocol>inet</ipprotocol>
+        <source>
+            <address>102.130.113.9</address>
+        </source>
+        <destination>
+            <any />
+        </destination>
+        <descr>citg</descr>
+        <updated>
+            <time>1701567250</time>
+            <username>admin@192.168.1.103 (Local Database)</username>
+        </updated>
+        <created>
+            <time>1701567250</time>
+            <username>admin@192.168.1.103 (Local Database)</username>
+        </created>
+    </rule><rule>
+        <id />
+        <tracker>1701567250</tracker>
+        <type>block</type>
+        <interface>lan</interface>
+        <ipprotocol>inet</ipprotocol>
+        <source>
+            <address>154.12.117.134</address>
+        </source>
+        <destination>
+            <any />
+        </destination>
+        <descr>citg</descr>
+        <updated>
+            <time>1701567250</time>
+            <username>admin@192.168.1.103 (Local Database)</username>
+        </updated>
+        <created>
+            <time>1701567250</time>
+            <username>admin@192.168.1.103 (Local Database)</username>
+        </created>
+    </rule><rule>
+        <id />
+        <tracker>1701567250</tracker>
+        <type>block</type>
+        <interface>lan</interface>
+        <ipprotocol>inet</ipprotocol>
+        <source>
+            <address>1.55.167.233</address>
+        </source>
+        <destination>
+            <any />
+        </destination>
+        <descr>citg</descr>
+        <updated>
+            <time>1701567250</time>
+            <username>admin@192.168.1.103 (Local Database)</username>
+        </updated>
+        <created>
+            <time>1701567250</time>
+            <username>admin@192.168.1.103 (Local Database)</username>
+        </created>
+    </rule><rule>
+        <id />
+        <tracker>1701567250</tracker>
+        <type>block</type>
+        <interface>lan</interface>
+        <ipprotocol>inet</ipprotocol>
+        <source>
+            <address>1.116.76.185</address>
+        </source>
+        <destination>
+            <any />
+        </destination>
+        <descr>citg</descr>
+        <updated>
+            <time>1701567250</time>
+            <username>admin@192.168.1.103 (Local Database)</username>
+        </updated>
+        <created>
+            <time>1701567250</time>
+            <username>admin@192.168.1.103 (Local Database)</username>
+        </created>
+    </rule><rule>
+        <id />
+        <tracker>1701567250</tracker>
+        <type>block</type>
+        <interface>lan</interface>
+        <ipprotocol>inet</ipprotocol>
+        <source>
+            <address>20.163.162.74</address>
+        </source>
+        <destination>
+            <any />
+        </destination>
+        <descr>citg</descr>
+        <updated>
+            <time>1701567250</time>
+            <username>admin@192.168.1.103 (Local Database)</username>
+        </updated>
+        <created>
+            <time>1701567250</time>
+            <username>admin@192.168.1.103 (Local Database)</username>
+        </created>
+    </rule><rule>
+        <id />
+        <tracker>1701567250</tracker>
+        <type>block</type>
+        <interface>lan</interface>
+        <ipprotocol>inet</ipprotocol>
+        <source>
+            <address>178.128.23.9</address>
+        </source>
+        <destination>
+            <any />
+        </destination>
+        <descr>citg</descr>
+        <updated>
+            <time>1701567250</time>
+            <username>admin@192.168.1.103 (Local Database)</username>
+        </updated>
+        <created>
+            <time>1701567250</time>
+            <username>admin@192.168.1.103 (Local Database)</username>
+        </created>
+    </rule><rule>
+        <id />
+        <tracker>1701567250</tracker>
+        <type>block</type>
+        <interface>lan</interface>
+        <ipprotocol>inet</ipprotocol>
+        <source>
+            <address>1.117.201.233</address>
+        </source>
+        <destination>
+            <any />
+        </destination>
+        <descr>citg</descr>
+        <updated>
+            <time>1701567250</time>
+            <username>admin@192.168.1.103 (Local Database)</username>
+        </updated>
+        <created>
+            <time>1701567250</time>
+            <username>admin@192.168.1.103 (Local Database)</username>
+        </created>
+    </rule><rule>
+        <id />
+        <tracker>1701567250</tracker>
+        <type>block</type>
+        <interface>lan</interface>
+        <ipprotocol>inet</ipprotocol>
+        <source>
+            <address>185.101.21.232</address>
+        </source>
+        <destination>
+            <any />
+        </destination>
+        <descr>citg</descr>
+        <updated>
+            <time>1701567250</time>
+            <username>admin@192.168.1.103 (Local Database)</username>
+        </updated>
+        <created>
+            <time>1701567250</time>
+            <username>admin@192.168.1.103 (Local Database)</username>
+        </created>
+    </rule><rule>
+        <id />
+        <tracker>1701567250</tracker>
+        <type>block</type>
+        <interface>lan</interface>
+        <ipprotocol>inet</ipprotocol>
+        <source>
+            <address>1.117.219.243</address>
+        </source>
+        <destination>
+            <any />
+        </destination>
+        <descr>citg</descr>
+        <updated>
+            <time>1701567250</time>
+            <username>admin@192.168.1.103 (Local Database)</username>
+        </updated>
+        <created>
+            <time>1701567250</time>
+            <username>admin@192.168.1.103 (Local Database)</username>
+        </created>
+    </rule><rule>
+        <id />
+        <tracker>1701567321</tracker>
+        <type>block</type>
+        <interface>lan</interface>
+        <ipprotocol>inet</ipprotocol>
+        <source>
+            <address>1.0.171.2</address>
+        </source>
+        <destination>
+            <any />
+        </destination>
+        <descr>citg</descr>
+        <updated>
+            <time>1701567321</time>
+            <username>admin@192.168.1.103 (Local Database)</username>
+        </updated>
+        <created>
+            <time>1701567321</time>
             <username>admin@192.168.1.103 (Local Database)</username>
         </created>
     </rule></filter>
-	<shaper>
-	</shaper>
+	<shaper />
 	<ipsec>
 		<client />
 	</ipsec>
@@ -759,8 +870,7 @@
 		<period>10</period>
 	</widgets>
 	<openvpn />
-	<dnshaper>
-	</dnshaper>
+	<dnshaper />
 	<unbound>
 		<enable />
 		<dnssec />
@@ -774,12 +884,11 @@
 	<vlans />
 	<qinqs />
 	<revision>
-		<time>1698864368</time>
-		<description>admin@192.168.1.103 (Local Database): Firewall: Rules - saved/edited a firewall rule.</description>
-		<username>admin@192.168.1.103 (Local Database)</username>
+		<time>1701317580</time>
+		<description>admin@192.168.1.104 (Local Database): Firewall: Rules - deleted a firewall rule.</description>
+		<username>admin@192.168.1.104 (Local Database)</username>
 	</revision>
-	<gateways>
-	</gateways>
+	<gateways />
 	<captiveportal />
 	<dnsmasq />
 	<ntpd>
