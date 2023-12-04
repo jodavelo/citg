@@ -1,23 +1,30 @@
-# CITG
-## Cyberintelligence based on a security layers model
+# SOAR-CTI-IDS
 
-This project was made for a graduate work about digital security master.
+## Description
+This project, titled "SOAR-CTI-IDS", has been meticulously developed as a master's thesis for the degree of Master in Digital Security at the Pontificia Universidad Javeriana, Bogotá, Colombia. It represents a significant effort in the field of cybersecurity by authors Sergio Viasus Arias and José Daniel Vergara Lozano, under the expert guidance of Engineer Ivan Camilo Castellanos Romero. The project focuses on integrating Security Orchestration, Automation, and Response (SOAR) with Cyber Threat Intelligence (CTI) and an Intrusion Detection System (IDS), creating a robust system for real-time threat detection and response.
 
-## Installation
-First off, you need to create a mysql database, for to can import mysql dump that contains the ip addresses considered as malicious and checked by [Virus Total](https://www.virustotal.com/gui/home/upload). Then you need to install the python required dependencies, and finally you should to can run the main script called script.py.
+## Authors
+- Sergio Viasus Arias
+- José Daniel Vergara Lozano
 
-CITG requires [Python](https://www.python.org/) v3.9+ to run.
+## Project Director
+- Engineer Ivan Camilo Castellanos Romero
 
-Once made the previous steps you can run:
+## University
+- Pontificia Universidad Javeriana, Bogotá, Colombia
 
-```python
-python3 script.py
-```
+## Degree
+- Master's in Digital Security
 
-#### Don't forget put your own api key generated from virus total page and replace it in apykey keyword inside of script.py
+## Year 
+- 2023
 
-## Copyright
+## Project Overview
+The "SOAR-CTI-IDS" project leverages advanced technologies and methodologies to create a dynamic system capable of detecting and responding to cyber threats in real time. By integrating SOAR with CTI, the system efficiently identifies potential malicious IPs using tools like Suricata, assesses them through IPQualityScore API for fraud scoring, and responds by updating firewall rules and maintaining a database of indicators of compromise. This project not only enhances cybersecurity measures but also showcases innovative approaches to digital security challenges.
 
-PUJ - Colombia
-
-
+## Key Features
+- Real-time threat detection using Suricata IDS.
+- Automated response with SOAR capabilities.
+- Cyber Threat Intelligence integration for accurate IP risk assessment.
+- Dynamic firewall rule management based on threat analysis.
+- Comprehensive database of indicators of compromise.
